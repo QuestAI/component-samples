@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={questTheme}>
       <StyledEngineProvider injectFirst>
-        <div className="App">
+        <div>
           <Form3 />
         </div>
       </StyledEngineProvider>

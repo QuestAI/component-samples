@@ -852,6 +852,108 @@ const questTheme = createTheme({
             
       }
     },
+    MuiInputLabel: {
+      styleOverrides: {
+        "root": {
+          color: globalTheme.palette.text.primary, 
+          fontStyle: globalTheme.typography["Body 1"].fontStyle, 
+          fontFamily: globalTheme.typography["Body 1"].fontFamily, 
+          fontWeight: globalTheme.typography["Body 1"].fontWeight, 
+          fontSize: globalTheme.typography["Body 1"].fontSize, 
+          letterSpacing: globalTheme.typography["Body 1"].letterSpacing, 
+          textDecoration: globalTheme.typography["Body 1"].textDecoration, 
+          lineHeight: globalTheme.typography["Body 1"].lineHeight, 
+          textTransform: globalTheme.typography["Body 1"].textTransform, 
+          "&.MuiError": {
+              color: globalTheme.palette.error.main, 
+              fontStyle: globalTheme.typography["Body 1"].fontStyle, 
+              fontFamily: globalTheme.typography["Body 1"].fontFamily, 
+              fontWeight: globalTheme.typography["Body 1"].fontWeight, 
+              fontSize: globalTheme.typography["Body 1"].fontSize, 
+              letterSpacing: globalTheme.typography["Body 1"].letterSpacing, 
+              textDecoration: globalTheme.typography["Body 1"].textDecoration, 
+              lineHeight: globalTheme.typography["Body 1"].lineHeight, 
+              textTransform: globalTheme.typography["Body 1"].textTransform, 
+          },
+          "&.MuiDisabled": {
+              color: globalTheme.palette.text.disabled, 
+              fontStyle: globalTheme.typography["Body 1"].fontStyle, 
+              fontFamily: globalTheme.typography["Body 1"].fontFamily, 
+              fontWeight: globalTheme.typography["Body 1"].fontWeight, 
+              fontSize: globalTheme.typography["Body 1"].fontSize, 
+              letterSpacing: globalTheme.typography["Body 1"].letterSpacing, 
+              textDecoration: globalTheme.typography["Body 1"].textDecoration, 
+              lineHeight: globalTheme.typography["Body 1"].lineHeight, 
+              textTransform: globalTheme.typography["Body 1"].textTransform, 
+          }
+        },
+        "focussed": {
+            color: globalTheme.palette.primary.main, 
+            fontStyle: globalTheme.typography["Body 1"].fontStyle, 
+            fontFamily: globalTheme.typography["Body 1"].fontFamily, 
+            fontWeight: globalTheme.typography["Body 1"].fontWeight, 
+            fontSize: globalTheme.typography["Body 1"].fontSize, 
+            letterSpacing: globalTheme.typography["Body 1"].letterSpacing, 
+            textDecoration: globalTheme.typography["Body 1"].textDecoration, 
+            lineHeight: globalTheme.typography["Body 1"].lineHeight, 
+            textTransform: globalTheme.typography["Body 1"].textTransform, 
+        },
+        "shrink": {
+            fontStyle: globalTheme.typography["Helper"].fontStyle, 
+            fontFamily: globalTheme.typography["Helper"].fontFamily, 
+            fontWeight: globalTheme.typography["Helper"].fontWeight, 
+            fontSize: globalTheme.typography["Helper"].fontSize, 
+            letterSpacing: globalTheme.typography["Helper"].letterSpacing, 
+            textDecoration: globalTheme.typography["Helper"].textDecoration, 
+            lineHeight: globalTheme.typography["Helper"].lineHeight, 
+            textTransform: globalTheme.typography["Helper"].textTransform, 
+        }
+            
+      }
+    },
+    MuiInput: {
+      styleOverrides: {
+        "root": {
+          color: globalTheme.palette.text.primary, 
+          fontStyle: globalTheme.typography["Body 1"].fontStyle, 
+          fontFamily: globalTheme.typography["Body 1"].fontFamily, 
+          fontWeight: globalTheme.typography["Body 1"].fontWeight, 
+          fontSize: globalTheme.typography["Body 1"].fontSize, 
+          letterSpacing: globalTheme.typography["Body 1"].letterSpacing, 
+          textDecoration: globalTheme.typography["Body 1"].textDecoration, 
+          lineHeight: globalTheme.typography["Body 1"].lineHeight, 
+          textTransform: globalTheme.typography["Body 1"].textTransform, 
+        }
+            
+      }
+    },
+    MuiHelperText: {
+      styleOverrides: {
+        "root": {
+          color: globalTheme.palette.text.primary, 
+          fontStyle: globalTheme.typography["Helper"].fontStyle, 
+          fontFamily: globalTheme.typography["Helper"].fontFamily, 
+          fontWeight: globalTheme.typography["Helper"].fontWeight, 
+          fontSize: globalTheme.typography["Helper"].fontSize, 
+          letterSpacing: globalTheme.typography["Helper"].letterSpacing, 
+          textDecoration: globalTheme.typography["Helper"].textDecoration, 
+          lineHeight: globalTheme.typography["Helper"].lineHeight, 
+          textTransform: globalTheme.typography["Helper"].textTransform, 
+          "&.MuiError": {
+              color: globalTheme.palette.error.main, 
+              fontStyle: globalTheme.typography["Helper"].fontStyle, 
+              fontFamily: globalTheme.typography["Helper"].fontFamily, 
+              fontWeight: globalTheme.typography["Helper"].fontWeight, 
+              fontSize: globalTheme.typography["Helper"].fontSize, 
+              letterSpacing: globalTheme.typography["Helper"].letterSpacing, 
+              textDecoration: globalTheme.typography["Helper"].textDecoration, 
+              lineHeight: globalTheme.typography["Helper"].lineHeight, 
+              textTransform: globalTheme.typography["Helper"].textTransform, 
+          }
+        },
+            
+      }
+    },
   }
 }, globalTheme);
 
