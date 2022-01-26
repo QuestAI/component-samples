@@ -50,6 +50,7 @@ const Form = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   flexGrow: "0",  
+  width: "304px",  
 });
   
 const Text = styled("div")({  
@@ -183,7 +184,8 @@ const Success = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "1",  
+  flexGrow: "0",  
+  width: "304px",  
 });
   
 const Text1 = styled("div")({  
