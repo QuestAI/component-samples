@@ -33,7 +33,11 @@ const useForm3 = () => {
   }
 
   const onCardNumberChange = (e) => {
-    setCardNumber(e.target.value);
+    let val = e.target.value;
+    if (val.length === 4 || val.length === 9 || val.length === 14) {
+      val = val + "-";
+    }
+    setCardNumber(val);
     setCardError(null);
   }
 
@@ -43,7 +47,11 @@ const useForm3 = () => {
   }
 
   const onExpDateChange = (e) => {
-    setExpDate(e.target.value);
+    let val = e.target.value;
+    if (val.length === 2) {
+      val = val + "/";
+    }
+    setExpDate(val);
     setExpDateError(null);
   }
 
@@ -63,10 +71,6 @@ const useForm3 = () => {
 
     if (cardNumber.trim() === "") {
       setCardError("Card Number is required");
-      hasError = true;
-    }
-    else if (cardNumber.includes("-") || cardNumber.includes(" ")) {
-      setCardError("Invalid Card Number");
       hasError = true;
     }
     else {
