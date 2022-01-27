@@ -7,6 +7,7 @@ import './App.css';
 import questTheme from "./QuestDesignSystemTheme";
 
 import Form3 from "./Form3";
+import JoinNewsleter from "./JoinNewsletter";
 
 const MainDiv = styled("div")({
   width: "100vw",
@@ -23,7 +24,7 @@ function App() {
     <ThemeProvider theme={questTheme}>
       <StyledEngineProvider injectFirst>
         <MainDiv>
-          <Form3 />
+          <JoinNewsleter />
         </MainDiv>
       </StyledEngineProvider>
     </ThemeProvider>
