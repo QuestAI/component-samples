@@ -10,5 +10,16 @@
   src: url('./assets/Heebo/Heebo-Medium.ttf')
 }
 
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 500;
+  src: url('./assets/DMSans/DMSans-Medium.ttf')
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-weight: 700;
+  src: url('./assets/DMSans/DMSans-Bold.ttf')
+}
 
 
