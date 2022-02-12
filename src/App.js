@@ -9,11 +9,11 @@ import questTheme from "./QuestDesignSystemTheme";
 import Form3 from "./Form3";
 
 import EventList from "./EventList";
-import CardList from "./BlingVC/CardList"
+//import CardList from "./BlingVC/CardList"
 
 const MainDiv = styled("div")({
   width: "100vw",
-  //height: "100vh",
+  height: "100vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -26,7 +26,7 @@ function App() {
     <ThemeProvider theme={questTheme}>
       <StyledEngineProvider injectFirst>
         <MainDiv>
-          <CardList />
+          <Form3 />
         </MainDiv>
       </StyledEngineProvider>
     </ThemeProvider>
