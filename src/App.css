@@ -11,6 +11,12 @@
 }
 
 @font-face {
+  font-family: "Heebo";
+  font-weight: 700;
+  src: url('./assets/Heebo/Heebo-Bold.ttf')
+}
+
+@font-face {
   font-family: "DM Sans";
   font-weight: 500;
   src: url('./assets/DMSans/DMSans-Medium.ttf')
@@ -22,4 +28,33 @@
   src: url('./assets/DMSans/DMSans-Bold.ttf')
 }
 
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  src: url('./assets/Inter/Inter-Regular.ttf')
+}
 
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  src: url('./assets/Inter/Inter-Medium.ttf')
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  src: url('./assets/Inter/Inter-Bold.ttf')
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  src: url('./assets/Inter/Inter-SemiBold.ttf')
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url('./assets/Roboto/Roboto-Regular.ttf');
+  font-display: swap;
+}
