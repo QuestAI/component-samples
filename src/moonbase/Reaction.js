@@ -12,16 +12,15 @@
 *
 **********************************************************************/
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import useReaction from './useReaction';
  
 const StateDefault = styled("div", {
     shouldForwardProp: prop => !["backgroundColor1", "border1"].includes(prop)
   })(({ theme, backgroundColor1,border1 }) =>({  
   backgroundColor: backgroundColor1,  
-  border: border1,  
-  boxSizing: "border-box",  
   borderRadius: "20px",  
+  border: border1,  
   display: "flex",  
   flexDirection: "row",  
   width: "221px",  
@@ -30,6 +29,7 @@ const StateDefault = styled("div", {
   alignItems: "center",  
   gap: "2px",  
   padding: "4px 8px",  
+  boxSizing: "border-box",  
   cursor: "pointer",  
 }));
   
@@ -44,18 +44,16 @@ const Emoji = styled("div")({
   textDecoration: "none",  
   lineHeight: "14px",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
  
-function Reaction(props){
+function Reaction(props) {
   const {data, fns} = useReaction();
   return (
-     <StateDefault backgroundColor1={props.isSelected ? "rgba(195, 230, 255, 1)" : data.isHover ? "rgba(232, 245, 255, 1)" :  "rgba(255, 255, 255, 1)"} border1={props.isSelected ? "6px solid rgba(255, 255, 255, 1)" : data.isHover ? "1px solid rgba(123, 97, 255, 0.15)" : "1px solid rgba(0, 0, 0, 0.08)"} onClick={props.handleClick} onMouseOver={fns.handleMouseOver} onMouseOut={fns.handleMouseOut}>
-        <Emoji>
-          {props.reactionInfo.emoji}
-        </Emoji>
-      </StateDefault>
+    <StateDefault backgroundColor1={props.isSelected ? "rgba(195, 230, 255, 1)" : data.isHover ? "rgba(232, 245, 255, 1)" :  "rgba(255, 255, 255, 1)"} border1={props.isSelected ? "6px solid rgba(255, 255, 255, 1)" : data.isHover ? "1px solid rgba(2, 122, 209, 0.3)" : "none"} onClick={props.handleClick} onMouseOver={fns.handleMouseOver} onMouseOut={fns.handleMouseOut}>
+       <Emoji>
+         {props.reactionInfo.emoji}
+       </Emoji>
+     </StateDefault>
    );
 }
 

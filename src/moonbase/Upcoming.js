@@ -12,23 +12,22 @@
 *
 **********************************************************************/
 
-import {Link} from '@mui/material';
+import { Link } from '@mui/material';
 import VectorImage from './assets/images/Vector.png';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
  
 const Upcoming1 = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
-  width: width1,  
   justifyContent: "flex-start",  
   alignItems: "flex-start",  
   gap: "22px",  
   padding: "0px",  
   boxSizing: "border-box",  
+  width: width1,  
 }));
   
 const Upcoming2 = styled("div")({  
@@ -41,12 +40,9 @@ const Upcoming2 = styled("div")({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const Event1 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -55,18 +51,15 @@ const Event1 = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const Frame42 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
   alignItems: "flex-start",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
 });
   
 const Today = styled("div")({  
@@ -80,8 +73,6 @@ const Today = styled("div")({
   textDecoration: "none",  
   lineHeight: "28px",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const YourFirstDayAtMoonBa = styled("div")({  
@@ -95,20 +86,15 @@ const YourFirstDayAtMoonBa = styled("div")({
   textDecoration: "none",  
   lineHeight: "28px",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const Rectangle10 = styled("div")({  
-  opacity: "1",  
   backgroundColor: "rgba(218, 218, 218, 1)",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "2px",  
 });
   
 const Event2 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -117,18 +103,15 @@ const Event2 = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const Frame41 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
   alignItems: "flex-start",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
 });
   
 const Friday = styled("div")({  
@@ -142,8 +125,6 @@ const Friday = styled("div")({
   textDecoration: "none",  
   lineHeight: "28px",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const Setup1StWorkspacePro = styled("div")({  
@@ -157,20 +138,15 @@ const Setup1StWorkspacePro = styled("div")({
   textDecoration: "none",  
   lineHeight: "28px",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const Rectangle11 = styled("div")({  
-  opacity: "1",  
   backgroundColor: "rgba(218, 218, 218, 1)",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "2px",  
 });
   
 const Link1 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
@@ -178,54 +154,48 @@ const Link1 = styled("div")({
   gap: "11px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
 });
   
 const Vector = styled("img")({  
-  height: "22.5px",  
-  width: "19.5px",  
-  flexGrow: "0",  
-});
-  
-const Link2 = styled(Link)({  
-  flexGrow: "0",  
+  height: "18px",  
+  width: "16px",  
 });
  
-function Upcoming(){
+function Upcoming() {
   return (
-     <Upcoming1 width1={"100%"}>
-        <Upcoming2>
-          Upcoming
-        </Upcoming2>
-        <Event1>
-          <Frame42>
-            <Today>
-              Today
-            </Today>
-            <YourFirstDayAtMoonBa>
-              Your First Day at Moon Base
-            </YourFirstDayAtMoonBa>
-          </Frame42>
-          <Rectangle10>
-          </Rectangle10>
-        </Event1>
-        <Event2>
-          <Frame41>
-            <Friday>
-              Friday
-            </Friday>
-            <Setup1StWorkspacePro>
-              “Setup 1st Workspace” Project Due
-            </Setup1StWorkspacePro>
-          </Frame41>
-          <Rectangle11>
-          </Rectangle11>
-        </Event2>
-        <Link1>
-          <Vector src={VectorImage}/>
-          <Link2 href="#" variant="Body 1" >Add reminder to your calendar</Link2>
-        </Link1>
-      </Upcoming1>
+    <Upcoming1 width1={"100%"}>
+       <Upcoming2>
+         Upcoming
+       </Upcoming2>
+       <Event1>
+         <Frame42>
+           <Today>
+             Today
+           </Today>
+           <YourFirstDayAtMoonBa>
+             Your First Day at Moon Base
+           </YourFirstDayAtMoonBa>
+         </Frame42>
+         <Rectangle10>
+         </Rectangle10>
+       </Event1>
+       <Event2>
+         <Frame41>
+           <Friday>
+             Friday
+           </Friday>
+           <Setup1StWorkspacePro>
+             “Setup 1st Workspace” Project Due
+           </Setup1StWorkspacePro>
+         </Frame41>
+         <Rectangle11>
+         </Rectangle11>
+       </Event2>
+       <Link1>
+         <Vector src={VectorImage}/>
+         <Link href="#" underline="hover" >Add reminder to your calendar</Link>
+       </Link1>
+     </Upcoming1>
    );
 }
 

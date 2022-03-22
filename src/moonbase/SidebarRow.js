@@ -12,8 +12,8 @@
 *
 **********************************************************************/
 
-import {SvgIcon} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { SvgIcon } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import useSidebarRow from './useSidebarRow';
  
 const Property1Default = styled("div", {
@@ -32,15 +32,13 @@ const Property1Default = styled("div", {
   cursor: "pointer",  
 }));
   
-const Icon1 = styled(SvgIcon)({  
-  flexGrow: "0",  
-  width: "24px",  
-  height: "24px",  
-});
+const Icon1 = styled(SvgIcon)(({ theme }) =>({  
+  color: theme.palette["Light"]["Primary"]["Contrast"],  
+}));
   
-const Text = styled("div")({  
+const Text = styled("div")(({ theme }) =>({  
   textAlign: "left",  
-  color: "rgba(255, 255, 255, 1)",  
+  color: theme.palette["Light"]["Primary"]["Contrast"],  
   fontStyle: "normal",  
   fontFamily: "Inter",  
   fontWeight: "700",  
@@ -48,21 +46,20 @@ const Text = styled("div")({
   letterSpacing: "0.64px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
   flexGrow: "1",  
-});
+}));
  
-function SidebarRow(props){
+function SidebarRow(props) {
   const {data, fns} = useSidebarRow();
   return (
-     <Property1Default backgroundColor1={!props.sidebarHover && props.isSelected ? "rgba(123, 97, 255, 1)" : props.sidebarHover && data.isHover ? "rgba(123, 97, 255, 1)" : props.sidebarHover && props.isSelected ? "rgba(84, 179, 247, 1)" :  "rgba(0, 0, 0, 1)"} onClick={props.handleClick} onMouseOver={fns.handleMouseOver} onMouseOut={fns.handleMouseOut}>
-        < Icon1  size = { "medium"} color = { "secondary"} component = { props.sidebarItem.icon}/>
-        {!(!props.sidebarHover && !props.sSelected) && !(!props.sidebarHover && props.isSelected) ?
-            <Text>
-            {props.sidebarItem.text}
-          </Text>
-        :null}
-      </Property1Default>
+    <Property1Default backgroundColor1={!props.sidebarHover && props.isSelected ? "rgba(123, 97, 255, 1)" : props.sidebarHover && data.isHover ? "rgba(123, 97, 255, 1)" : props.sidebarHover && props.isSelected ? "rgba(84, 179, 247, 1)" :  "rgba(0, 0, 0, 1)"} onClick={props.handleClick} onMouseOver={fns.handleMouseOver} onMouseOut={fns.handleMouseOut}>
+       <Icon1  fontSize = { "medium"}  component = { props.sidebarItem.icon}/>
+       {!(!props.sidebarHover && !props.sSelected) && !(!props.sidebarHover && props.isSelected) ?
+           <Text>
+           {props.sidebarItem.text}
+         </Text>
+       :null}
+     </Property1Default>
    );
 }
 

@@ -12,18 +12,17 @@
 *
 **********************************************************************/
 
-import {Avatar} from '@mui/material';
+import { Avatar } from '@mui/material';
 import MoonbaseLogoImage from './assets/images/MoonbaseLogo.png';
 import MoonbaseLogoMImage from './assets/images/MoonbaseLogo_M.png';
 import Avatar1Image from './assets/images/Avatar.png';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import SidebarRow from './SidebarRow';
 import useSidebar from './useSidebar';
  
 const CollapsableOpen = styled("div", {
     shouldForwardProp: prop => !["width1", "height1", "overflow1"].includes(prop)
   })(({ width1,height1,overflow1 }) =>({  
-  opacity: "1",  
   backgroundColor: "rgba(0, 0, 0, 1)",  
   display: "flex",  
   flexDirection: "column",  
@@ -39,7 +38,6 @@ const CollapsableOpen = styled("div", {
 const Top = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -48,40 +46,34 @@ const Top = styled("div", {
   padding: "20px 0px 0px 0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   width: width1,  
 }));
   
 const Logo = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
   alignItems: "center",  
   padding: "16px 0px 0px 40px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
   width: width1,  
 }));
   
 const MoonbaseLogo = styled("img")({  
   height: "11.26px",  
   width: "100px",  
-  flexGrow: "0",  
 });
   
 const MoonbaseLogoM = styled("img")({  
   height: "11px",  
   width: "9px",  
-  flexGrow: "0",  
 });
   
 const List = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -90,20 +82,17 @@ const List = styled("div", {
   padding: "0px 0px 0px 22px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   width: width1,  
 }));
   
 const SidebarRow1 = styled(SidebarRow)(({ theme }) =>({  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "40px",  
 }));
   
-const Account = styled("div", {
+const Account1 = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   backgroundColor: "rgba(43, 43, 43, 1)",  
   display: "flex",  
   flexDirection: "column",  
@@ -113,7 +102,6 @@ const Account = styled("div", {
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "60px",  
   width: width1,  
 }));
@@ -121,7 +109,6 @@ const Account = styled("div", {
 const AvatarRow = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
@@ -130,12 +117,10 @@ const AvatarRow = styled("div", {
   padding: "0px 30px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   width: width1,  
 }));
   
 const Avatar1 = styled(Avatar)({  
-  flexGrow: "0",  
   width: "32px",  
   height: "32px",  
 });
@@ -152,43 +137,42 @@ const FullName = styled("div", {
   letterSpacing: "0.64px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
   flexGrow: "1",  
   width: width1,  
 }));
  
-function Sidebar(){
+function Sidebar() {
   const {data, fns} = useSidebar();
   return (
-     <CollapsableOpen onMouseEnter={fns.handleMouseOver} onMouseLeave={fns.handleMouseOut} width1={!data.isHover ? "90px" :  "290px"} height1={"100vh"} overflow1={"hidden"}>
-        <Top width1={!data.isHover ? "90px" :  "290px"}>
-          <Logo width1={!data.isHover ? "51px" :  "140px"}>
-            {!(!data.isHover) ?
-                <MoonbaseLogo src={MoonbaseLogoImage}/>
-            :null}
-            {(!data.isHover) ?
-                <MoonbaseLogoM src={MoonbaseLogoMImage}/>
-            :null}
-          </Logo>
-          <List width1={!data.isHover ? "90px" :  "290px"}>
-            {data.sidebarItems.map((sidebarItem, index) => {
-              return (
-                <SidebarRow1  key={index} sidebarItem={sidebarItem} isSelected={index === data.selectedIndex} handleClick={() => fns.handleClick(index)} sidebarHover={data.isHover}/>
-              )
-            })}
-          </List>
-        </Top>
-        <Account width1={!data.isHover ? "90px" :  "290px"}>
-          <AvatarRow width1={!data.isHover ? "90px" :  "290px"}>
-            <Avatar1 variant="circular" src={Avatar1Image} alt={"Avatar"} />
-            {!(!data.isHover) ?
-                <FullName width1={!data.isHover ? "1px" :  "190px"}>
-                Ellen Cho
-              </FullName>
-            :null}
-          </AvatarRow>
-        </Account>
-      </CollapsableOpen>
+    <CollapsableOpen onMouseEnter={fns.handleMouseOver} onMouseLeave={fns.handleMouseOut} width1={!data.isHover ? "90px" :  "290px"} height1={"100vh"} overflow1={"hidden"}>
+       <Top width1={!data.isHover ? "90px" :  "290px"}>
+         <Logo width1={!data.isHover ? "51px" :  "140px"}>
+           {!(!data.isHover) ?
+               <MoonbaseLogo src={MoonbaseLogoImage}/>
+           :null}
+           {(!data.isHover) ?
+               <MoonbaseLogoM src={MoonbaseLogoMImage}/>
+           :null}
+         </Logo>
+         <List width1={!data.isHover ? "90px" :  "290px"}>
+           {data.sidebarItems.map((sidebarItem, index) => {
+             return (
+               <SidebarRow1  key={index} sidebarItem={sidebarItem} isSelected={index === data.selectedIndex} handleClick={() => fns.handleClick(index)} sidebarHover={data.isHover}/>
+             )
+           })}
+         </List>
+       </Top>
+       <Account1 width1={!data.isHover ? "90px" :  "290px"}>
+         <AvatarRow width1={!data.isHover ? "90px" :  "290px"}>
+           <Avatar1 variant="circular" src={Avatar1Image} alt={"Avatar"} />
+           {!(!data.isHover) ?
+               <FullName width1={!data.isHover ? "1px" :  "190px"}>
+               Ellen Cho
+             </FullName>
+           :null}
+         </AvatarRow>
+       </Account1>
+     </CollapsableOpen>
    );
 }
 

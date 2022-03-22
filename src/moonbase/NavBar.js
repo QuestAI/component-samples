@@ -12,15 +12,14 @@
 *
 **********************************************************************/
 
-import {Avatar} from '@mui/material';
+import { Avatar } from '@mui/material';
 import Avatar1Image from './assets/images/Avatar.png';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
  
 const NavBar1 = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   height: "80px",  
@@ -32,7 +31,6 @@ const NavBar1 = styled("div", {
 }));
   
 const Content = styled("div")({  
-  opacity: "1",  
   backgroundColor: "rgba(255, 255, 255, 1)",  
   display: "flex",  
   flexDirection: "column",  
@@ -41,12 +39,10 @@ const Content = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "80px",  
 });
   
 const RightSide2 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-end",  
@@ -59,7 +55,6 @@ const RightSide2 = styled("div")({
 });
   
 const Account = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-end",  
@@ -67,11 +62,9 @@ const Account = styled("div")({
   gap: "18px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
 });
   
 const Avatar1 = styled(Avatar)({  
-  flexGrow: "0",  
   width: "40px",  
   height: "40px",  
 });
@@ -86,26 +79,24 @@ const EllenCho = styled("div")({
   letterSpacing: "0.64px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
   width: "127px",  
   height: "25.83px",  
 });
  
-function NavBar(){
+function NavBar() {
   return (
-     <NavBar1 width1={"100%"}>
-        <Content>
-          <RightSide2>
-            <Account>
-              <Avatar1 variant="circular" src={Avatar1Image} alt={"Avatar"} />
-              <EllenCho>
-                Ellen Cho
-              </EllenCho>
-            </Account>
-          </RightSide2>
-        </Content>
-      </NavBar1>
+    <NavBar1 width1={"100%"}>
+       <Content>
+         <RightSide2>
+           <Account>
+             <Avatar1 variant="circular" src={Avatar1Image} alt={"Avatar"} />
+             <EllenCho>
+               Ellen Cho
+             </EllenCho>
+           </Account>
+         </RightSide2>
+       </Content>
+     </NavBar1>
    );
 }
 

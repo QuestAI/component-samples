@@ -12,12 +12,11 @@
 *
 **********************************************************************/
 
-import {Button,Link} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { Link } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
  
 const Notifications1 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -27,13 +26,7 @@ const Notifications1 = styled("div")({
   boxSizing: "border-box",  
 });
   
-const Button1 = styled(Button)({  
-  flexGrow: "0",  
-  height: "40px",  
-});
-  
 const QuickAccess = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -41,7 +34,6 @@ const QuickAccess = styled("div")({
   gap: "24px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
 });
   
 const Notifications2 = styled("div")({  
@@ -54,12 +46,9 @@ const Notifications2 = styled("div")({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const Box = styled("div")({  
-  opacity: "1",  
   backgroundColor: "rgba(251, 250, 250, 1)",  
   boxShadow: "0px 4px 18px rgba(0, 0, 0, 0.1)",  
   border: "1px solid rgba(176, 176, 176, 1)",  
@@ -71,7 +60,6 @@ const Box = styled("div")({
   alignItems: "flex-start",  
   gap: "7px",  
   padding: "24px",  
-  flexGrow: "0",  
   width: "348px",  
 });
   
@@ -86,33 +74,24 @@ const YouHave3ProjectNotif = styled("div")({
   textDecoration: "none",  
   lineHeight: "28px",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
-});
-  
-const Link1 = styled(Link)({  
-  flexGrow: "0",  
 });
  
-function Notifications(){
+function Notifications() {
   return (
-     <Notifications1>
-        {false ?
-            <Button1 variant="contained" size="large" color="primary" > Begin Onboarding </Button1>
-        :null}
-        <QuickAccess>
-          <Notifications2>
-            Notifications
-          </Notifications2>
-          <Box>
-            <YouHave3ProjectNotif>
-              You have 3 Project 
+    <Notifications1>
+       <QuickAccess>
+         <Notifications2>
+           Notifications
+         </Notifications2>
+         <Box>
+           <YouHave3ProjectNotif>
+             You have 3 Project 
 Notifications
-            </YouHave3ProjectNotif>
-            <Link1 href="#" variant="Body 1" >See your notifications ></Link1>
-          </Box>
-        </QuickAccess>
-      </Notifications1>
+           </YouHave3ProjectNotif>
+           <Link href="#" underline="hover" >See your notifications ></Link>
+         </Box>
+       </QuickAccess>
+     </Notifications1>
    );
 }
 

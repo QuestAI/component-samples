@@ -12,14 +12,14 @@
 
 import { useState } from "react";
 
-import { ReactComponent as Home } from './assets/images/Icon_Home__Color_default.svg';
-import { ReactComponent as Account } from './assets/images/Icon_Account__Color_default.svg';
-import { ReactComponent as Projects } from './assets/images/Icon_Projects__Color_default.svg';
-import { ReactComponent as Team } from './assets/images/Icon_Team__Color_default.svg';
-import { ReactComponent as Tickets } from './assets/images/Icon_Tickets__Color_default.svg';
-import { ReactComponent as Security } from './assets/images/Icon_Security__Color_default.svg';
-import { ReactComponent as Docs } from './assets/images/Icon_Docs__Color_default.svg';
-import { ReactComponent as Help } from './assets/images/Icon_Help__Color_default.svg';
+import { ReactComponent as Home } from './assets/images/Home.svg';
+import { ReactComponent as Account } from './assets/images/Account.svg';
+import { ReactComponent as Projects } from './assets/images/Project.svg';
+import { ReactComponent as Team } from './assets/images/Team.svg';
+import { ReactComponent as Tickets } from './assets/images/Tickets.svg';
+import { ReactComponent as Security } from './assets/images/Security.svg';
+import { ReactComponent as Docs } from './assets/images/Docs.svg';
+import { ReactComponent as Help } from './assets/images/Help.svg';
 
 
 

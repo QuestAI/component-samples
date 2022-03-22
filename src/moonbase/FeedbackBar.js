@@ -12,14 +12,13 @@
 *
 **********************************************************************/
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Reaction from './Reaction';
 import useFeedbackBar from './useFeedbackBar';
  
 const FeedbackBar1 = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   background: "linear-gradient(89.34deg, rgba(83, 178, 246, 1) 9.171567099603285%, rgba(124, 98, 255, 1) 90.77521726346906%)",  
   border: "1px solid rgba(176, 176, 176, 0.5)",  
   boxSizing: "border-box",  
@@ -35,7 +34,7 @@ const FeedbackBar1 = styled("div", {
   
 const FeedbackText = styled("div")(({ theme }) =>({  
   textAlign: "left",  
-  color: theme.palette.text.buttonPrimary,  
+  color: theme.palette["Light"]["Primary"]["Contrast"],  
   fontStyle: "normal",  
   fontFamily: "Inter",  
   fontWeight: "400",  
@@ -44,12 +43,9 @@ const FeedbackText = styled("div")(({ theme }) =>({
   textDecoration: "none",  
   lineHeight: "28px",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 }));
   
 const Btm = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "center",  
@@ -57,11 +53,9 @@ const Btm = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const Frame3 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "space-between",  
@@ -72,28 +66,27 @@ const Frame3 = styled("div")({
 });
   
 const Reaction1 = styled(Reaction)(({ theme }) =>({  
-  flexGrow: "0",  
-  width: "221.5px",  
+  width: "221px",  
   height: "42px",  
 }));
  
-function FeedbackBar(){
+function FeedbackBar() {
   const {data, fns} = useFeedbackBar();
   return (
-     <FeedbackBar1 width1={"100%"}>
-        <FeedbackText>
-          {fns.getFeedbackText()}
-        </FeedbackText>
-        <Btm>
-          <Frame3>
-            {data.reactions.map((reaction, index) => {
-              return (
-                <Reaction1  key={index} reactionInfo={reaction} isSelected={index === data.selectedIndex} handleClick={() => fns.handleClick(index)}/>
-              )
-            })}
-          </Frame3>
-        </Btm>
-      </FeedbackBar1>
+    <FeedbackBar1 width1={"100%"}>
+       <FeedbackText>
+         {fns.getFeedbackText()}
+       </FeedbackText>
+       <Btm>
+         <Frame3>
+           {data.reactions.map((reaction, index) => {
+             return (
+               <Reaction1  key={index} isSelected={index === data.selectedIndex} reactionInfo={reaction} handleClick={() => fns.handleClick(index)}/>
+             )
+           })}
+         </Frame3>
+       </Btm>
+     </FeedbackBar1>
    );
 }
 

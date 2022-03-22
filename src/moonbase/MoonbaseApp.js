@@ -3,7 +3,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 
 import styled from '@emotion/styled';
 
-import moonbaseTheme from "./MoonbaseDesignSystemTheme";
+import moonbaseLightTheme from "./MoonbaseDesignSystemLightTheme";
 import Dashboard from "./Dashboard";
 
 
@@ -18,7 +18,7 @@ const MainDiv = styled("div")({
 
 function MoonbaseApp() {
   return (
-    <ThemeProvider theme={moonbaseTheme}>
+    <ThemeProvider theme={moonbaseLightTheme}>
       <StyledEngineProvider injectFirst>
         <MainDiv>
           <Dashboard />

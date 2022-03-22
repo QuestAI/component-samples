@@ -12,8 +12,8 @@
 *
 **********************************************************************/
 
-import {Dialog} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { Dialog } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import Sidebar from './Sidebar';
 import NavBar from './NavBar';
 import FeedbackBar from './FeedbackBar';
@@ -26,7 +26,6 @@ import useDashboard from './useDashboard';
 const TypeQuestSidebarOpen = styled("div", {
     shouldForwardProp: prop => !["width1"].includes(prop)
   })(({ width1 }) =>({  
-  opacity: "1",  
   backgroundColor: "rgba(255, 255, 255, 1)",  
   display: "flex",  
   flexDirection: "column",  
@@ -40,7 +39,6 @@ const TypeQuestSidebarOpen = styled("div", {
 const Page = styled("div", {
     shouldForwardProp: prop => !["height1"].includes(prop)
   })(({ height1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
@@ -48,20 +46,17 @@ const Page = styled("div", {
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: height1,  
 }));
   
 const Sidebar1 = styled(Sidebar)(({ theme }) =>({  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   width: "290px",  
 }));
   
 const Content = styled("div", {
     shouldForwardProp: prop => !["width1", "height1", "overflow1"].includes(prop)
   })(({ width1,height1,overflow1 }) =>({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -77,12 +72,10 @@ const Content = styled("div", {
   
 const NavBar1 = styled(NavBar)(({ theme }) =>({  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "80px",  
 }));
   
 const Sec1 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -90,11 +83,9 @@ const Sec1 = styled("div")({
   padding: "22px 60px 30px 60px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const HeroContent = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
@@ -103,11 +94,9 @@ const HeroContent = styled("div")({
   padding: "0px 0px 20px 0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const WelcomeRow = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -128,17 +117,13 @@ const WelcomeText = styled("div")({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const FeedbackBar1 = styled(FeedbackBar)(({ theme }) =>({  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 }));
   
 const Sec2 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
@@ -146,15 +131,9 @@ const Sec2 = styled("div")({
   padding: "0px 61px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
-const Upcoming1 = styled(Upcoming)(({ theme }) =>({  
-  flexGrow: "1",  
-}));
-  
 const Padding = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -162,16 +141,10 @@ const Padding = styled("div")({
   gap: "22px",  
   padding: "0px 20px 0px 0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
   width: "252px",  
 });
   
-const Notifications1 = styled(Notifications)(({ theme }) =>({  
-  flexGrow: "0",  
-}));
-  
 const Sec3 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -180,7 +153,6 @@ const Sec3 = styled("div")({
   padding: "40px 61px 0px 61px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const PopularSwag = styled("div")({  
@@ -193,12 +165,9 @@ const PopularSwag = styled("div")({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const Items = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
@@ -207,7 +176,6 @@ const Items = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const ProductCard1 = styled(ProductCard)(({ theme }) =>({  
@@ -215,7 +183,6 @@ const ProductCard1 = styled(ProductCard)(({ theme }) =>({
 }));
   
 const Sec4 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -224,60 +191,58 @@ const Sec4 = styled("div")({
   padding: "40px 61px 0px 61px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "406px",  
 });
   
 const PaymentCard1 = styled(PaymentCard)(({ theme }) =>({  
-  flexGrow: "0",  
   height: "574px",  
   width: "728px",  
 }));
  
-function Dashboard(){
+function Dashboard() {
   const {data, fns} = useDashboard();
   return (
-     <TypeQuestSidebarOpen width1={"100vw"}>
-        <Page height1={"100%"}>
-          <Sidebar1  />
-          <Content width1={"calc(100vw - 290px)"} height1={"100vh"} overflow1={"auto"}>
-            <NavBar1  />
-            <Sec1>
-              <HeroContent>
-                <WelcomeRow>
-                  <WelcomeText>
-                    Welcome back to Moon Base, Ellen
-                  </WelcomeText>
-                </WelcomeRow>
-              </HeroContent>
-              <FeedbackBar1  />
-            </Sec1>
-            <Sec2>
-              <Upcoming1  />
-              <Padding>
-              </Padding>
-              <Notifications1  />
-            </Sec2>
-            <Sec3>
-              <PopularSwag>
-                Popular Swag
-              </PopularSwag>
-              <Items>
-                {data.products.map((product, index) => {
-                  return (
-                    <ProductCard1  key={index} product={product} buyClicked={() => fns.buyClicked(product)}/>
-                  )
-                })}
-              </Items>
-            </Sec3>
-            <Sec4>
-            </Sec4>
-          </Content>
-        </Page>
-        <Dialog open={data.showPayment} onClose={fns.closePaymentDialog} maxWidth={"1000px"}>
-          <PaymentCard1  product={data.selectedProduct} onClose={fns.closePaymentDialog}/>
-        </Dialog>
-      </TypeQuestSidebarOpen>
+    <TypeQuestSidebarOpen width1={"100vw"}>
+       <Page height1={"100%"}>
+         <Sidebar1  />
+         <Content width1={"calc(100vw - 290px)"} height1={"100vh"} overflow1={"auto"}>
+           <NavBar1  />
+           <Sec1>
+             <HeroContent>
+               <WelcomeRow>
+                 <WelcomeText>
+                   Welcome back to Moon Base, Ellen
+                 </WelcomeText>
+               </WelcomeRow>
+             </HeroContent>
+             <FeedbackBar1  />
+           </Sec1>
+           <Sec2>
+             <Upcoming  />
+             <Padding>
+             </Padding>
+             <Notifications  />
+           </Sec2>
+           <Sec3>
+             <PopularSwag>
+               Popular Swag
+             </PopularSwag>
+             <Items>
+               {data.products.map((product, index) => {
+                 return (
+                   <ProductCard1  key={index} product={product} buyClicked={() => fns.buyClicked(product)}/>
+                 )
+               })}
+             </Items>
+           </Sec3>
+           <Sec4>
+           </Sec4>
+         </Content>
+       </Page>
+       <Dialog open={data.showPayment} onClose={fns.closePaymentDialog} maxWidth={"1000px"}>
+         <PaymentCard1  product={data.selectedProduct} onClose={fns.closePaymentDialog}/>
+       </Dialog>
+     </TypeQuestSidebarOpen>
    );
 }
 

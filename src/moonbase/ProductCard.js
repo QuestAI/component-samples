@@ -12,12 +12,11 @@
 *
 **********************************************************************/
 
-import {Button} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
  
 const TypeQuest = styled("div")({  
-  opacity: "1",  
   backgroundColor: "rgba(255, 255, 255, 1)",  
   boxShadow: "0px 4px 6px rgba(3, 0, 161, 0.2)",  
   borderRadius: "8px",  
@@ -35,19 +34,16 @@ const TypeQuest = styled("div")({
 const Image = styled("div", {
     shouldForwardProp: prop => !["bgImage1"].includes(prop)
   })(({ bgImage1 }) =>({  
-  opacity: "1",  
   backgroundImage: `url(${bgImage1})`,  
   backgroundPosition: "center",  
   backgroundSize: "cover",  
   backgroundRepeat: "no-repeat",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "171px",  
   overflow: "hidden",  
 }));
   
 const TextButton = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -56,11 +52,9 @@ const TextButton = styled("div")({
   padding: "0px 40px 30px 28px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const Details = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -69,12 +63,11 @@ const Details = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const ItemName = styled("div")(({ theme }) =>({  
   textAlign: "left",  
-  color: theme.palette.text.primary,  
+  color: theme.palette["text"]["primary"],  
   fontStyle: "normal",  
   fontFamily: "Heebo",  
   fontWeight: "400",  
@@ -82,15 +75,13 @@ const ItemName = styled("div")(({ theme }) =>({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   height: "24px",  
 }));
   
 const ItemPrice = styled("div")(({ theme }) =>({  
   textAlign: "left",  
-  color: theme.palette.text.primary,  
+  color: theme.palette["text"]["primary"],  
   fontStyle: "normal",  
   fontFamily: "Heebo",  
   fontWeight: "700",  
@@ -98,53 +89,26 @@ const ItemPrice = styled("div")(({ theme }) =>({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 }));
-  
-const ButtonClicked = styled("div")({  
-  textAlign: "left",  
-  color: "rgba(107, 104, 255, 1)",  
-  fontStyle: "normal",  
-  fontFamily: "Heebo",  
-  fontWeight: "700",  
-  fontSize: "20px",  
-  letterSpacing: "0px",  
-  textDecoration: "none",  
-  textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
-  height: "48px",  
-  width: "138px",  
-});
-  
-const Button1 = styled(Button)({  
-  flexGrow: "0",  
-});
  
-function ProductCard(props){
+function ProductCard(props) {
   return (
-     <TypeQuest>
-        <Image bgImage1={props.product.image}>
-        </Image>
-        <TextButton>
-          <Details>
-            <ItemName>
-              {props.product.name}
-            </ItemName>
-            <ItemPrice>
-              {props.product.price}
-            </ItemPrice>
-          </Details>
-          {false ?
-              <ButtonClicked>
-              Button Clicked!
-            </ButtonClicked>
-          :null}
-          <Button1 variant="contained" size="medium" color="primary"  onClick={props.buyClicked}> Buy Now </Button1>
-        </TextButton>
-      </TypeQuest>
+    <TypeQuest>
+       <Image bgImage1={props.product.image}>
+       </Image>
+       <TextButton>
+         <Details>
+           <ItemName>
+             {props.product.name}
+           </ItemName>
+           <ItemPrice>
+             {props.product.price}
+           </ItemPrice>
+         </Details>
+         <Button variant="contained" size="large" color="primary"  onClick={props.buyClicked}> Buy Now </Button>
+       </TextButton>
+     </TypeQuest>
    );
 }
 

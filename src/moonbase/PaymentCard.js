@@ -12,17 +12,16 @@
 *
 **********************************************************************/
 
-import {TextField,Button,SvgIcon} from '@mui/material';
+import { TextField, Button, SvgIcon } from '@mui/material';
 import XImage from './assets/images/x.png';
-import { ReactComponent as ArrowRight } from './assets/images/Icon_Arrow_Right__Color_default.svg';
-import { ReactComponent as Check } from './assets/images/Icon_Check__Color_default.svg';
-import {styled} from '@mui/material/styles';
+import { ReactComponent as ArrowForwardFilled1 } from './assets/images/ArrowForwardFilled.svg';
+import { ReactComponent as CheckCircleFilled1 } from './assets/images/CheckCircleFilled.svg';
+import { styled } from '@mui/material/styles';
 import usePaymentCard from './usePaymentCard';
  
-const TypeQuest = styled("div")(({ theme }) =>({  
-  opacity: "1",  
+const TypeQuest = styled("div")({  
   backgroundColor: "rgba(255, 255, 255, 1)",  
-  boxShadow: theme.customShadows.cardShadow.boxShadow,  
+  boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.25)",  
   borderRadius: "10px",  
   display: "flex",  
   flexDirection: "row",  
@@ -34,12 +33,11 @@ const TypeQuest = styled("div")(({ theme }) =>({
   padding: "40px",  
   boxSizing: "border-box",  
   overflow: "hidden",  
-}));
+});
   
 const Image = styled("div", {
     shouldForwardProp: prop => !["bgImage1"].includes(prop)
   })(({ bgImage1 }) =>({  
-  opacity: "1",  
   backgroundImage: `url(${bgImage1})`,  
   backgroundPosition: "center",  
   backgroundSize: "cover",  
@@ -52,12 +50,21 @@ const Image = styled("div", {
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   width: "304px",  
 }));
   
 const Form = styled("div")({  
-  opacity: "1",  
+  display: "flex",  
+  flexDirection: "column",  
+  justifyContent: "space-between",  
+  alignItems: "flex-end",  
+  padding: "0px",  
+  boxSizing: "border-box",  
+  alignSelf: "stretch",  
+  width: "304px",  
+});
+  
+const Frame1 = styled("div")({  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -65,12 +72,9 @@ const Form = styled("div")({
   gap: "24px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
-  width: "304px",  
 });
   
 const TextTop = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -78,12 +82,10 @@ const TextTop = styled("div")({
   gap: "2px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  alignSelf: "stretch",  
-  flexGrow: "0",  
+  width: "304px",  
 });
   
 const TopRow = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "space-between",  
@@ -91,11 +93,9 @@ const TopRow = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
 const Text = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -103,22 +103,19 @@ const Text = styled("div")({
   gap: "2px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
 });
   
 const ConfirmPurchase = styled("div")(({ theme }) =>({  
   textAlign: "left",  
   color: "rgba(0, 0, 0, 1)",  
-  fontStyle: theme.typography["H5"].fontStyle,  
-  fontFamily: theme.typography["H5"].fontFamily,  
-  fontWeight: theme.typography["H5"].fontWeight,  
-  fontSize: theme.typography["H5"].fontSize,  
-  letterSpacing: theme.typography["H5"].letterSpacing,  
-  textDecoration: theme.typography["H5"].textDecoration,  
-  lineHeight: theme.typography["H5"].lineHeight,  
-  textTransform: theme.typography["H5"].textTransform,  
-  opacity: "1",  
-  flexGrow: "0",  
+  fontStyle: theme.typography["Typography"]["H5"].fontStyle,  
+  fontFamily: theme.typography["Typography"]["H5"].fontFamily,  
+  fontWeight: theme.typography["Typography"]["H5"].fontWeight,  
+  fontSize: theme.typography["Typography"]["H5"].fontSize,  
+  letterSpacing: theme.typography["Typography"]["H5"].letterSpacing,  
+  textDecoration: theme.typography["Typography"]["H5"].textDecoration,  
+  lineHeight: theme.typography["Typography"]["H5"].lineHeight,  
+  textTransform: theme.typography["Typography"]["H5"].textTransform,  
 }));
   
 const ItemName = styled("div")({  
@@ -131,8 +128,6 @@ const ItemName = styled("div")({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const ItemPrice = styled("div")({  
@@ -145,19 +140,15 @@ const ItemPrice = styled("div")({
   letterSpacing: "0px",  
   textDecoration: "none",  
   textTransform: "none",  
-  opacity: "1",  
-  flexGrow: "0",  
 });
   
 const X = styled("img")({  
   height: "12px",  
   width: "12px",  
-  flexGrow: "0",  
   cursor: "pointer",  
 });
   
 const Frame3 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -165,12 +156,10 @@ const Frame3 = styled("div")({
   gap: "40px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
   width: "304px",  
 });
   
 const Row1 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -179,23 +168,17 @@ const Row1 = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
-const TextField1 = styled(TextField)({  
+const TextFieldStandard = styled(TextField)({  
   alignSelf: "stretch",  
-  flexGrow: "0",  
-  height: "77px",  
 });
   
-const TextField2 = styled(TextField)({  
+const TextFieldStandard1 = styled(TextField)({  
   alignSelf: "stretch",  
-  flexGrow: "0",  
-  height: "77px",  
 });
   
 const Row2 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "row",  
   justifyContent: "flex-start",  
@@ -204,22 +187,17 @@ const Row2 = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
-const TextField3 = styled(TextField)({  
-  flexGrow: "0",  
+const TextFieldStandard2 = styled(TextField)({  
   width: "58px",  
-  height: "77px",  
 });
   
-const TextField4 = styled(TextField)({  
+const TextFieldStandard3 = styled(TextField)({  
   flexGrow: "1",  
-  height: "77px",  
 });
   
 const Q123 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -228,15 +206,20 @@ const Q123 = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
 });
   
-const Button1 = styled(Button)({  
-  flexGrow: "0",  
+const AutoAddedFrame = styled("div")({  
+  display: "flex",  
+  flexDirection: "column",  
+  justifyContent: "flex-start",  
+  alignItems: "flex-end",  
+  gap: "10px",  
+  padding: "0px",  
+  boxSizing: "border-box",  
+  alignSelf: "stretch",  
 });
   
 const Success = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "center",  
@@ -245,26 +228,20 @@ const Success = styled("div")({
   padding: "0px",  
   boxSizing: "border-box",  
   alignSelf: "stretch",  
-  flexGrow: "0",  
   width: "304px",  
 });
   
 const Text1 = styled("div")({  
-  opacity: "1",  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
   alignItems: "flex-start",  
-  gap: "4px",  
+  gap: "14px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
 });
   
 const Frame2 = styled("div")({  
-  opacity: "1",  
-  border: "3px solid rgba(100, 207, 111, 1)",  
-  boxSizing: "border-box",  
   borderRadius: "40px",  
   display: "flex",  
   flexDirection: "row",  
@@ -272,50 +249,17 @@ const Frame2 = styled("div")({
   alignItems: "center",  
   gap: "10px",  
   padding: "0px",  
-  flexGrow: "0",  
-  height: "52px",  
-  width: "52px",  
+  boxSizing: "border-box",  
+  height: "30px",  
+  width: "30px",  
   overflow: "hidden",  
 });
   
-const Icon1 = styled(SvgIcon)({  
-  flexGrow: "0",  
-  width: "36px",  
-  height: "36px",  
-});
-  
-const PaymentConfirmed = styled("div")(({ theme }) =>({  
-  textAlign: "left",  
-  color: "rgba(0, 0, 0, 1)",  
-  fontStyle: theme.typography["H5"].fontStyle,  
-  fontFamily: theme.typography["H5"].fontFamily,  
-  fontWeight: theme.typography["H5"].fontWeight,  
-  fontSize: theme.typography["H5"].fontSize,  
-  letterSpacing: theme.typography["H5"].letterSpacing,  
-  textDecoration: theme.typography["H5"].textDecoration,  
-  lineHeight: theme.typography["H5"].lineHeight,  
-  textTransform: theme.typography["H5"].textTransform,  
-  opacity: "1",  
-  flexGrow: "0",  
+const Icon1 = styled(SvgIcon)(({ theme }) =>({  
+  color: theme.palette["Light"]["Action"]["Active (54p)"],  
 }));
   
-const AConfirmationEmailHa = styled("div")(({ theme }) =>({  
-  textAlign: "left",  
-  color: "rgba(0, 0, 0, 1)",  
-  fontStyle: theme.typography["H6"].fontStyle,  
-  fontFamily: theme.typography["H6"].fontFamily,  
-  fontWeight: theme.typography["H6"].fontWeight,  
-  fontSize: theme.typography["H6"].fontSize,  
-  letterSpacing: theme.typography["H6"].letterSpacing,  
-  textDecoration: theme.typography["H6"].textDecoration,  
-  lineHeight: theme.typography["H6"].lineHeight,  
-  textTransform: theme.typography["H6"].textTransform,  
-  opacity: "1",  
-  flexGrow: "0",  
-}));
-  
-const Text2 = styled("div")({  
-  opacity: "1",  
+const Frame11 = styled("div")({  
   display: "flex",  
   flexDirection: "column",  
   justifyContent: "flex-start",  
@@ -323,103 +267,152 @@ const Text2 = styled("div")({
   gap: "4px",  
   padding: "0px",  
   boxSizing: "border-box",  
-  flexGrow: "0",  
+});
+  
+const PaymentConfirmed = styled("div")(({ theme }) =>({  
+  textAlign: "left",  
+  color: "rgba(0, 0, 0, 1)",  
+  fontStyle: theme.typography["Typography"]["H5"].fontStyle,  
+  fontFamily: theme.typography["Typography"]["H5"].fontFamily,  
+  fontWeight: theme.typography["Typography"]["H5"].fontWeight,  
+  fontSize: theme.typography["Typography"]["H5"].fontSize,  
+  letterSpacing: theme.typography["Typography"]["H5"].letterSpacing,  
+  textDecoration: theme.typography["Typography"]["H5"].textDecoration,  
+  lineHeight: theme.typography["Typography"]["H5"].lineHeight,  
+  textTransform: theme.typography["Typography"]["H5"].textTransform,  
+}));
+  
+const AConfirmationEmailHa = styled("div")(({ theme }) =>({  
+  textAlign: "left",  
+  color: "rgba(0, 0, 0, 1)",  
+  fontStyle: theme.typography["Typography"]["H6"].fontStyle,  
+  fontFamily: theme.typography["Typography"]["H6"].fontFamily,  
+  fontWeight: theme.typography["Typography"]["H6"].fontWeight,  
+  fontSize: theme.typography["Typography"]["H6"].fontSize,  
+  letterSpacing: theme.typography["Typography"]["H6"].letterSpacing,  
+  textDecoration: theme.typography["Typography"]["H6"].textDecoration,  
+  lineHeight: theme.typography["Typography"]["H6"].lineHeight,  
+  textTransform: theme.typography["Typography"]["H6"].textTransform,  
+}));
+  
+const Text2 = styled("div")({  
+  display: "flex",  
+  flexDirection: "column",  
+  justifyContent: "flex-start",  
+  alignItems: "flex-start",  
+  gap: "4px",  
+  padding: "0px",  
+  boxSizing: "border-box",  
 });
   
 const OrderReference = styled("div")(({ theme }) =>({  
   textAlign: "left",  
   color: "rgba(0, 0, 0, 1)",  
-  fontStyle: theme.typography["H5"].fontStyle,  
-  fontFamily: theme.typography["H5"].fontFamily,  
-  fontWeight: theme.typography["H5"].fontWeight,  
-  fontSize: theme.typography["H5"].fontSize,  
-  letterSpacing: theme.typography["H5"].letterSpacing,  
-  textDecoration: theme.typography["H5"].textDecoration,  
-  lineHeight: theme.typography["H5"].lineHeight,  
-  textTransform: theme.typography["H5"].textTransform,  
-  opacity: "1",  
-  flexGrow: "0",  
+  fontStyle: theme.typography["Typography"]["H5"].fontStyle,  
+  fontFamily: theme.typography["Typography"]["H5"].fontFamily,  
+  fontWeight: theme.typography["Typography"]["H5"].fontWeight,  
+  fontSize: theme.typography["Typography"]["H5"].fontSize,  
+  letterSpacing: theme.typography["Typography"]["H5"].letterSpacing,  
+  textDecoration: theme.typography["Typography"]["H5"].textDecoration,  
+  lineHeight: theme.typography["Typography"]["H5"].lineHeight,  
+  textTransform: theme.typography["Typography"]["H5"].textTransform,  
 }));
   
 const Q0021488192 = styled("div")(({ theme }) =>({  
   textAlign: "left",  
   color: "rgba(0, 0, 0, 1)",  
-  fontStyle: theme.typography["H6"].fontStyle,  
-  fontFamily: theme.typography["H6"].fontFamily,  
-  fontWeight: theme.typography["H6"].fontWeight,  
-  fontSize: theme.typography["H6"].fontSize,  
-  letterSpacing: theme.typography["H6"].letterSpacing,  
-  textDecoration: theme.typography["H6"].textDecoration,  
-  lineHeight: theme.typography["H6"].lineHeight,  
-  textTransform: theme.typography["H6"].textTransform,  
-  opacity: "1",  
-  flexGrow: "0",  
+  fontStyle: theme.typography["Typography"]["H6"].fontStyle,  
+  fontFamily: theme.typography["Typography"]["H6"].fontFamily,  
+  fontWeight: theme.typography["Typography"]["H6"].fontWeight,  
+  fontSize: theme.typography["Typography"]["H6"].fontSize,  
+  letterSpacing: theme.typography["Typography"]["H6"].letterSpacing,  
+  textDecoration: theme.typography["Typography"]["H6"].textDecoration,  
+  lineHeight: theme.typography["Typography"]["H6"].lineHeight,  
+  textTransform: theme.typography["Typography"]["H6"].textTransform,  
 }));
+  
+const TopRow1 = styled("div")({  
+  display: "flex",  
+  flexDirection: "row",  
+  justifyContent: "space-between",  
+  alignItems: "flex-start",  
+  padding: "0px",  
+  boxSizing: "border-box",  
+  alignSelf: "stretch",  
+});
  
-function PaymentCard(props){
+function PaymentCard(props) {
   const {data, fns} = usePaymentCard();
   return (
-     <TypeQuest>
-        <Image bgImage1={props.product.image}>
-        </Image>
-        {!data.formSubmitted ?
-            <Form>
-            <TextTop>
-              <TopRow>
-                <Text>
-                  <ConfirmPurchase>
-                    Confirm Purchase
-                  </ConfirmPurchase>
-                  <ItemName>
-                    {props.product.name}
-                  </ItemName>
-                  <ItemPrice>
-                    {props.product.price}
-                  </ItemPrice>
-                </Text>
-                <X onClick={props.onClose} src={XImage}/>
-              </TopRow>
-            </TextTop>
-            <Frame3>
-              <Row1>
-                <TextField1 variant="standard" size="medium"  onChange={fns.onNameChange} label="Name on Card" helperText={data.nameError ? data.nameError: "Name of cardholder"} value={data.name} error={Boolean(data.nameError)}/>
-                      <TextField2 variant="standard" size="medium"  onChange={fns.onCardNumberChange} label="Card Number" helperText={data.cardError ? data.cardError : " Card Number without dashes or spaces"} value={data.cardNumber} error={Boolean(data.cardError)}/>
-                    </Row1>
-              <Row2>
-                <TextField3 variant="standard" size="medium"  onChange={fns.onCvvChange} label="CVV" helperText={data.cvvError ? data.cvvError: "CVV"} value={data.cvv} error={Boolean(data.cvvError)}/>
-                      <TextField4 variant="standard" size="medium"  onChange={fns.onExpDateChange} label="Vaild Through" helperText={data.expDateError? data.expDateError : "Exp Date MM/YY or MM/YYYY"} value={data.expDate} error={Boolean(data.expDateError)}/>
-                    </Row2>
-            </Frame3>
-            <Q123>
-              <Button1 variant="contained" size="large" color="primary"  onClick={fns.handleSubmit} endIcon={ <SvgIcon size={ "medium" } component = { ArrowRight } />}> BUY </Button1>
-            </Q123>
-          </Form>
-        :null}
-        {data.formSubmitted ?
-            <Success>
-            <Text1>
-              <Frame2>
-                < Icon1  size = { "large"} color = { "success"} component = { Check}/>
-              </Frame2>
-              <PaymentConfirmed>
-                Payment Confirmed!
-              </PaymentConfirmed>
-              <AConfirmationEmailHa>
-                A confirmation email 
+    <TypeQuest>
+       <Image bgImage1={props.product.image}>
+       </Image>
+       {!data.formSubmitted ?
+           <Form>
+           <Frame1>
+             <TextTop>
+               <TopRow>
+                 <Text>
+                   <ConfirmPurchase>
+                     Confirm Purchase
+                   </ConfirmPurchase>
+                   <ItemName>
+                     {props.product.name}
+                   </ItemName>
+                   <ItemPrice>
+                     {props.product.price}
+                   </ItemPrice>
+                 </Text>
+                 <X onClick={props.onClose} src={XImage}/>
+               </TopRow>
+             </TextTop>
+             <Frame3>
+               <Row1>
+                 <TextFieldStandard variant="standard" size="small"  onChange={fns.onNameChange} label="Name on Card" helperText={data.nameError ? data.nameError: "Name of cardholder"} value={data.name} error={Boolean(data.nameError)} />
+                 <TextFieldStandard1 variant="standard" size="small"  onChange={fns.onCardNumberChange} label="Card Number" helperText={data.cardError ? data.cardError : " Card Number without dashes or spaces"} value={data.cardNumber} error={Boolean(data.cardError)} />
+               </Row1>
+               <Row2>
+                 <TextFieldStandard2 variant="standard" size="small"  onChange={fns.onCvvChange} label="CVV" helperText={data.cvvError ? data.cvvError: "CVV"} value={data.cvv} error={Boolean(data.cvvError)} />
+                 <TextFieldStandard3 variant="standard" size="small"  onChange={fns.onExpDateChange} label="Valid Through" helperText={data.expDateError? data.expDateError : "Exp Date MM/YY or MM/YYYY"} value={data.expDate} error={Boolean(data.expDateError)} />
+               </Row2>
+             </Frame3>
+           </Frame1>
+           <Q123>
+             <AutoAddedFrame>
+               <Button variant="contained" size="large" color="primary"  onClick={fns.handleSubmit} endIcon={ <SvgIcon sx={{width: "18px", height: "22px"}} component = { ArrowForwardFilled1 } />}> BUY </Button>
+             </AutoAddedFrame>
+           </Q123>
+         </Form>
+       :null}
+       {data.formSubmitted ?
+           <Success>
+           <Text1>
+             <Frame2>
+               <Icon1  fontSize = { "large"}  component = { CheckCircleFilled1}/>
+             </Frame2>
+             <Frame11>
+               <PaymentConfirmed>
+                 Payment Confirmed!
+               </PaymentConfirmed>
+               <AConfirmationEmailHa>
+                 A confirmation email 
 has been sent.
-              </AConfirmationEmailHa>
-            </Text1>
-            <Text2>
-              <OrderReference>
-                Order Reference #
-              </OrderReference>
-              <Q0021488192>
-                0021488192
-              </Q0021488192>
-            </Text2>
-          </Success>
-        :null}
-      </TypeQuest>
+               </AConfirmationEmailHa>
+             </Frame11>
+           </Text1>
+           <Text2>
+             <OrderReference>
+               Order Reference #
+             </OrderReference>
+             <Q0021488192>
+               0021488192
+             </Q0021488192>
+             <TopRow1>
+             </TopRow1>
+           </Text2>
+         </Success>
+       :null}
+     </TypeQuest>
    );
 }
 
