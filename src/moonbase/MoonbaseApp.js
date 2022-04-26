@@ -3,6 +3,12 @@ import { StyledEngineProvider } from '@mui/material/styles';
 
 import styled from '@emotion/styled';
 
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import moonbaseLightTheme from "./MoonbaseDesignSystemLightTheme";
 import Dashboard from "./Dashboard";
 
@@ -21,7 +27,14 @@ function MoonbaseApp() {
     <ThemeProvider theme={moonbaseLightTheme}>
       <StyledEngineProvider injectFirst>
         <MainDiv>
-          <Dashboard />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/navbar" element={<Dashboard />} />
+              <Route path="/feedbackbar" element={<Dashboard />} />
+              <Route path="/" element={<Dashboard />} />
+            </Routes>
+          </BrowserRouter>
         </MainDiv>
       </StyledEngineProvider>
     </ThemeProvider >
