@@ -19,25 +19,27 @@ import { ReactComponent as CheckCircleFilled1 } from './assets/images/CheckCircl
 import { styled } from '@mui/material/styles';
 import usePaymentCard from './usePaymentCard';
  
-const TypeQuest = styled("div")({  
+const ScreenDesktop = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   backgroundColor: `rgba(255, 255, 255, 1)`,  
   boxShadow: `0px 8px 20px rgba(0, 0, 0, 0.25)`,  
   borderRadius: `10px`,  
   display: `flex`,  
-  flexDirection: `row`,  
-  width: `728px`,  
-  height: `574px`,  
+  flexDirection: data.size === "mobile" ? `column` : `row`,  
+  width: data.size === "mobile" ? `360px` : `728px`,  
+  height: data.size === "mobile" ? "unset" : `574px`,  
   justifyContent: `flex-start`,  
   alignItems: `flex-start`,  
   gap: `40px`,  
   padding: `40px`,  
   boxSizing: `border-box`,  
   overflow: `hidden`,  
-});
+}));
   
 const Image = styled("div", {
-    shouldForwardProp: prop => !["props"].includes(prop)
-  })(({ props }) =>({  
+    shouldForwardProp: prop => !["props", "data"].includes(prop)
+  })(({ props, data }) =>({  
   backgroundImage: `url(${props.product.image})`,  
   backgroundPosition: `center`,  
   backgroundSize: `cover`,  
@@ -48,10 +50,13 @@ const Image = styled("div", {
   alignItems: `flex-start`,  
   gap: `40px`,  
   alignSelf: `stretch`,  
-  width: `304px`,  
+  width: data.size === "mobile" ? "unset" : `304px`,  
+  height: data.size === "mobile" ? `242px` : "unset",  
 }));
   
-const Form = styled("div")({  
+const Form = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `column`,  
   justifyContent: `space-between`,  
@@ -59,10 +64,13 @@ const Form = styled("div")({
   padding: `0px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
-  width: `304px`,  
-});
+  width: data.size === "mobile" ? "unset" : `304px`,  
+  height: data.size === "mobile" ? `494px` : "unset",  
+}));
   
-const Frame1 = styled("div")({  
+const Frame1 = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `column`,  
   justifyContent: `flex-start`,  
@@ -70,9 +78,12 @@ const Frame1 = styled("div")({
   gap: `24px`,  
   padding: `0px`,  
   boxSizing: `border-box`,  
-});
+  alignSelf: data.size === "mobile" ? `stretch` : "unset",  
+}));
   
-const TextTop = styled("div")({  
+const TextTop = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `column`,  
   justifyContent: `flex-start`,  
@@ -80,8 +91,9 @@ const TextTop = styled("div")({
   gap: `2px`,  
   padding: `0px`,  
   boxSizing: `border-box`,  
-  width: `304px`,  
-});
+  width: data.size === "mobile" ? "unset" : `304px`,  
+  alignSelf: data.size === "mobile" ? `stretch` : "unset",  
+}));
   
 const TopRow = styled("div")({  
   display: `flex`,  
@@ -149,7 +161,9 @@ const X = styled("img")({
   cursor: `pointer`,  
 });
   
-const Frame3 = styled("div")({  
+const Frame3 = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `column`,  
   justifyContent: `flex-start`,  
@@ -157,8 +171,9 @@ const Frame3 = styled("div")({
   gap: `40px`,  
   padding: `0px`,  
   boxSizing: `border-box`,  
-  width: `304px`,  
-});
+  width: data.size === "mobile" ? "unset" : `304px`,  
+  alignSelf: data.size === "mobile" ? `stretch` : "unset",  
+}));
   
 const Row1 = styled("div")({  
   display: `flex`,  
@@ -220,7 +235,9 @@ const AutoAddedFrame = styled("div")({
   alignSelf: `stretch`,  
 });
   
-const Success = styled("div")({  
+const Success = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `column`,  
   justifyContent: `center`,  
@@ -229,8 +246,9 @@ const Success = styled("div")({
   padding: `0px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
-  width: `304px`,  
-});
+  width: data.size === "mobile" ? "unset" : `304px`,  
+  height: data.size === "mobile" ? `494px` : "unset",  
+}));
   
 const Text1 = styled("div")({  
   display: `flex`,  
@@ -284,19 +302,18 @@ const PaymentConfirmed = styled("div")(({ theme }) =>({
   textTransform: theme.typography["Typography"]["H5"].textTransform,  
 }));
   
-const AConfirmationEmailHa = styled("div")(({ theme }) =>({  
+const AConfirmationEmailHa = styled("div")({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: `rgba(0, 0, 0, 1)`,  
-  fontStyle: theme.typography["Typography"]["H6"].fontStyle,  
-  fontFamily: theme.typography["Typography"]["H6"].fontFamily,  
-  fontWeight: theme.typography["Typography"]["H6"].fontWeight,  
-  fontSize: theme.typography["Typography"]["H6"].fontSize,  
-  letterSpacing: theme.typography["Typography"]["H6"].letterSpacing,  
-  textDecoration: theme.typography["Typography"]["H6"].textDecoration,  
-  lineHeight: theme.typography["Typography"]["H6"].lineHeight,  
-  textTransform: theme.typography["Typography"]["H6"].textTransform,  
-}));
+  fontStyle: `normal`,  
+  fontFamily: `Heebo`,  
+  fontWeight: `400`,  
+  fontSize: `18px`,  
+  letterSpacing: `0.36px`,  
+  textDecoration: `none`,  
+  textTransform: `none`,  
+});
   
 const Text2 = styled("div")({  
   display: `flex`,  
@@ -322,19 +339,18 @@ const OrderReference = styled("div")(({ theme }) =>({
   textTransform: theme.typography["Typography"]["H5"].textTransform,  
 }));
   
-const Q0021488192 = styled("div")(({ theme }) =>({  
+const Q0021488192 = styled("div")({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: `rgba(0, 0, 0, 1)`,  
-  fontStyle: theme.typography["Typography"]["H6"].fontStyle,  
-  fontFamily: theme.typography["Typography"]["H6"].fontFamily,  
-  fontWeight: theme.typography["Typography"]["H6"].fontWeight,  
-  fontSize: theme.typography["Typography"]["H6"].fontSize,  
-  letterSpacing: theme.typography["Typography"]["H6"].letterSpacing,  
-  textDecoration: theme.typography["Typography"]["H6"].textDecoration,  
-  lineHeight: theme.typography["Typography"]["H6"].lineHeight,  
-  textTransform: theme.typography["Typography"]["H6"].textTransform,  
-}));
+  fontStyle: `normal`,  
+  fontFamily: `Heebo`,  
+  fontWeight: `400`,  
+  fontSize: `18px`,  
+  letterSpacing: `0.36px`,  
+  textDecoration: `none`,  
+  textTransform: `none`,  
+});
   
 const TopRow1 = styled("div")({  
   display: `flex`,  
@@ -348,13 +364,13 @@ const TopRow1 = styled("div")({
 function PaymentCard(props) {
   const {data, fns} = usePaymentCard();
   return (
-    <TypeQuest >
-       <Image props={props} >
+    <ScreenDesktop data={data} >
+       <Image props={props} data={data} >
        </Image>
        {!data.formSubmitted ?
-           <Form >
-           <Frame1 >
-             <TextTop >
+           <Form data={data} >
+           <Frame1 data={data} >
+             <TextTop data={data} >
                <TopRow >
                  <Text >
                    <ConfirmPurchase >
@@ -370,7 +386,7 @@ function PaymentCard(props) {
                  <X onClick={props.onClose}  src={XImage} alt={"x"}/>
                </TopRow>
              </TextTop>
-             <Frame3 >
+             <Frame3 data={data} >
                <Row1 >
                  <TextFieldStandard variant="standard" size="small"  onChange={fns.onNameChange} label={`Name on Card`} helperText={data.nameError ? data.nameError: "Name of cardholder"} value={data.name} error={Boolean(data.nameError)}   />
                  <TextFieldStandard1 variant="standard" size="small"  onChange={fns.onCardNumberChange} label={`Card Number`} helperText={data.cardError ? data.cardError : " Card Number without dashes or spaces"} value={data.cardNumber} error={Boolean(data.cardError)}   />
@@ -389,7 +405,7 @@ function PaymentCard(props) {
          </Form>
        :null}
        {data.formSubmitted ?
-           <Success >
+           <Success data={data} >
            <Text1 >
              <Frame2 >
                <Icon1    fontSize = { "large"}  component = { CheckCircleFilled1}/>
@@ -416,7 +432,7 @@ has been sent.`}
            </Text2>
          </Success>
        :null}
-     </TypeQuest>
+     </ScreenDesktop>
    );
 }
 

@@ -16,7 +16,11 @@ import SummerHat from './assets/images/lucija-ros-0G9aAIN3jsk-unsplash.jpg';
 import Sneakers from './assets/images/maksim-larin-NOpsC3nWTzY-unsplash.jpg';
 import Outfit from './assets/images/Outfit.jpg';
 
+import useResponsiveSize from "../../useResponsiveSize";
+
 const useProductsPage = () => {
+  let size = useResponsiveSize();
+
   const products = [
     {
       name: "Moonbase Outfit",
@@ -44,7 +48,7 @@ const useProductsPage = () => {
   let [selectedProduct, setSelectedProduct] = useState(null);
   let [showPayment, setShowPayment] = useState(false);
 
-  let data = { products, selectedProduct, showPayment };
+  let data = { products, selectedProduct, showPayment, size };
 
   const closePaymentDialog = () => {
     setShowPayment(false);

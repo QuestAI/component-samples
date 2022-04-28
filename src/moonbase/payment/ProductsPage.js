@@ -19,113 +19,100 @@ import ProductCard from './ProductCard';
 import PaymentCard from './PaymentCard';
 import useProductsPage from './useProductsPage';
  
-const ProductsPopUp = styled("div")({  
+const ScreenDesktop = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   backgroundColor: `rgba(255, 255, 255, 1)`,  
   display: `flex`,  
   flexDirection: `column`,  
-  height: `1018px`,  
+  height: data.size=== "mobile" ? "100vh" : `1018px`,  
   width: "100vw",  
   justifyContent: `flex-start`,  
-  alignItems: `flex-start`,  
+  alignItems: data.size=== "mobile" ? `center` : `flex-start`,  
   gap: `10px`,  
-  padding: `10px`,  
+  padding: data.size=== "mobile" ? `10px` : `0px`,  
   boxSizing: `border-box`,  
-  overflow: `hidden`,  
-});
+  overflow: data.size=== "mobile" ? "scroll" : "unset",  
+}));
   
-const Page = styled("div")({  
+const Page = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `row`,  
-  justifyContent: `flex-start`,  
+  justifyContent: data.size=== "mobile" ? `center` : `flex-start`,  
   alignItems: `flex-start`,  
   gap: `10px`,  
-  padding: `10px`,  
+  padding: data.size=== "mobile" ? `10px` : `0px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
-  flexGrow: `1`,  
-  overflow: `hidden`,  
-});
+  flexGrow: data.size=== "mobile" ? "unset" : `1`,  
+}));
   
-const Content = styled("div")({  
+const Content = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `column`,  
   justifyContent: `flex-start`,  
-  alignItems: `flex-start`,  
-  padding: `120px 0px 0px 0px`,  
+  alignItems: data.size=== "mobile" ? `center` : `flex-start`,  
+  padding: data.size=== "mobile" ? `20px 0px 0px 0px` : `120px 40px 0px 40px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
   flexGrow: `1`,  
-});
-  
-const Sec1 = styled("div")({  
-  display: `flex`,  
-  flexDirection: `column`,  
-  justifyContent: `flex-start`,  
-  alignItems: `flex-start`,  
-  padding: `22px 60px 0px 0px`,  
-  boxSizing: `border-box`,  
-  alignSelf: `stretch`,  
-});
+}));
   
 const Breadcrumbs1 = styled(Breadcrumbs)(({ theme }) =>({  
   alignSelf: `stretch`,  
 }));
   
-const Sec3 = styled("div")({  
+const Items = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
-  flexDirection: `column`,  
+  flexDirection: data.size=== "mobile" ? `column` : `row`,  
   justifyContent: `flex-start`,  
-  alignItems: `flex-start`,  
-  gap: `20px`,  
-  padding: `0px 61px`,  
-  boxSizing: `border-box`,  
-  alignSelf: `stretch`,  
-});
-  
-const Items = styled("div")({  
-  display: `flex`,  
-  flexDirection: `row`,  
-  justifyContent: `flex-start`,  
-  alignItems: `flex-start`,  
+  alignItems: data.size=== "mobile" ? `center` : `flex-start`,  
   gap: `30px`,  
-  padding: `0px`,  
+  padding: data.size=== "mobile" ? `0px 10px 60px 10px` : `0px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
-});
-  
-const ProductCard1 = styled(ProductCard)(({ theme }) =>({  
-  flexGrow: `1`,  
 }));
   
-const PaymentCard1 = styled(PaymentCard)(({ theme }) =>({  
-  height: `574px`,  
-  width: `728px`,  
+const ProductCard1 = styled(ProductCard, {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ theme, data }) =>({  
+  flexGrow: data.size=== "mobile" ? "unset" : `1`,  
+  alignSelf: data.size=== "mobile" ? `stretch` : "unset",  
+}));
+  
+const PaymentCard1 = styled(PaymentCard, {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ theme, data }) =>({  
+  height: data.size=== "mobile" ? "unset" : `574px`,  
+  width: data.size=== "mobile" ? `360px` : `728px`,  
 }));
  
 function ProductsPage() {
   const {data, fns} = useProductsPage();
   return (
-    <ProductsPopUp >
-       <Page >
-         <Content >
-           <Sec1 >
-             <Breadcrumbs1   />
-           </Sec1>
-           <Sec3 >
-             <Items >
-               {data.products && data.products.map((product, index) => {
-                 return (
-                   <ProductCard1  key={index}  product={product} buyClicked={() => fns.buyClicked(product)}/>
-                 )
-               })}
-             </Items>
-           </Sec3>
+    <ScreenDesktop data={data} >
+       <Page data={data} >
+         <Content data={data} >
+           <Breadcrumbs1   />
+           <Items data={data} >
+             {data.products && data.products.map((product, index) => {
+               return (
+                 <ProductCard1  key={index} data={data}  product={product} buyClicked={() => fns.buyClicked(product)}/>
+               )
+             })}
+           </Items>
          </Content>
        </Page>
        <Dialog open={data.showPayment} onClose={fns.closePaymentDialog} maxWidth={"1000px"}>
-         <PaymentCard1   product={data.selectedProduct} onClose={fns.closePaymentDialog}/>
+         <PaymentCard1  data={data}   product={data.selectedProduct} onClose={fns.closePaymentDialog}/>
        </Dialog>
-     </ProductsPopUp>
+     </ScreenDesktop>
    );
 }
 

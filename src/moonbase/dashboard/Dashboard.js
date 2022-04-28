@@ -12,7 +12,7 @@
 *
 **********************************************************************/
 
-import { Button, Dialog } from '@mui/material';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ImageImage from './assets/images/Image_4.png';
 import Image1Image from './assets/images/Image_3.png';
@@ -23,8 +23,6 @@ import NavBar from './NavBar';
 import FeedbackBar from './FeedbackBar';
 import Upcoming from './Upcoming';
 import Notifications from './Notifications';
-import PaymentCard from '../payment/PaymentCard';
-import useDashboard from './useDashboard';
 
 const TypeQuestSidebarOpen = styled("div")({
   backgroundColor: `rgba(255, 255, 255, 1)`,
@@ -481,13 +479,7 @@ const Sec4 = styled("div")({
   height: `406px`,
 });
 
-const PaymentCard1 = styled(PaymentCard)(({ theme }) => ({
-  height: `574px`,
-  width: `728px`,
-}));
-
 function Dashboard() {
-  const { data, fns } = useDashboard();
   return (
     <TypeQuestSidebarOpen >
       <Page >
@@ -581,9 +573,6 @@ function Dashboard() {
           </Sec4>
         </Content>
       </Page>
-      <Dialog open={data.showPayment} onClose={fns.closePaymentDialog} maxWidth={"1000px"}>
-        <PaymentCard1 product={data.selectedProduct} onClose={fns.closePaymentDialog} />
-      </Dialog>
     </TypeQuestSidebarOpen>
   );
 }

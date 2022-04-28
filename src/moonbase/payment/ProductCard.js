@@ -14,22 +14,24 @@
 
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
+import useProductCard from './useProductCard';
  
-const TypeQuest = styled("div")({  
+const TypeQuest = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   backgroundColor: `rgba(255, 255, 255, 1)`,  
   boxShadow: `0px 4px 6px rgba(3, 0, 161, 0.2)`,  
   borderRadius: `8px`,  
   display: `flex`,  
   flexDirection: `column`,  
-  width: `390px`,  
+  width: data.size === "mobile" ? "90%" : "calc(25% - 52px)",  
   justifyContent: `flex-start`,  
   alignItems: `flex-start`,  
   gap: `14px`,  
   padding: `0px`,  
   boxSizing: `border-box`,  
   overflow: `hidden`,  
-});
+}));
   
 const Image = styled("div", {
     shouldForwardProp: prop => !["props"].includes(prop)
@@ -38,6 +40,11 @@ const Image = styled("div", {
   backgroundPosition: `center`,  
   backgroundSize: `cover`,  
   backgroundRepeat: `no-repeat`,  
+  display: `flex`,  
+  flexDirection: `row`,  
+  justifyContent: `flex-start`,  
+  alignItems: `flex-start`,  
+  gap: `10px`,  
   alignSelf: `stretch`,  
   height: `171px`,  
   overflow: `hidden`,  
@@ -87,16 +94,16 @@ const ItemPrice = styled("div")(({ theme }) =>({
   fontStyle: `normal`,  
   fontFamily: `Heebo`,  
   fontWeight: `700`,  
-  fontSize: `16px`,  
+  fontSize: `14px`,  
   letterSpacing: `0px`,  
   textDecoration: `none`,  
   textTransform: `none`,  
-  alignSelf: `stretch`,  
 }));
  
 function ProductCard(props) {
+  const {data} = useProductCard();
   return (
-    <TypeQuest >
+    <TypeQuest data={data} >
        <Image props={props} >
        </Image>
        <TextButton >

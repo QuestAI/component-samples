@@ -12,7 +12,7 @@
 *
 **********************************************************************/
 
-import { Button, SvgIcon } from '@mui/material';
+import { Button, SvgIcon, Link } from '@mui/material';
 import { ReactComponent as ArrowForwardFilled1 } from './assets/images/ArrowForwardFilled.svg';
 import { styled } from '@mui/material/styles';
 import Sidebar from './Sidebar';
@@ -22,6 +22,7 @@ const TypeQuestSidebarOpen = styled("div")({
   backgroundColor: `rgba(255, 255, 255, 1)`,  
   display: `flex`,  
   flexDirection: `column`,  
+  height: `1079px`,  
   width: `1423px`,  
   justifyContent: `flex-start`,  
   alignItems: `flex-start`,  
@@ -37,12 +38,12 @@ const Page = styled("div")({
   padding: `0px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
-  height: `1079px`,  
+  flexGrow: `1`,  
 });
   
 const Sidebar1 = styled(Sidebar)(({ theme }) =>({  
   alignSelf: `stretch`,  
-  width: `290px`,  
+  width: `90px`,  
 }));
   
 const Content = styled("div")({  
@@ -107,6 +108,21 @@ const Frame1 = styled("div")({
   boxSizing: `border-box`,  
 });
   
+const Disclaimer = styled("div")({  
+  textAlign: `left`,  
+  whiteSpace: `pre-wrap`,  
+  color: `rgba(0, 0, 0, 1)`,  
+  fontStyle: `normal`,  
+  fontFamily: `Inter`,  
+  fontWeight: `600`,  
+  fontSize: `14px`,  
+  letterSpacing: `0px`,  
+  textDecoration: `none`,  
+  textTransform: `none`,  
+  height: `71px`,  
+  width: `407px`,  
+});
+  
 const Title = styled("div")({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
@@ -120,8 +136,20 @@ const Title = styled("div")({
   textTransform: `none`,  
 });
   
-const Description = styled("div")({  
-  textAlign: `left`,  
+const DescriptionSpan1 = styled("span")({  
+  whiteSpace: `pre-wrap`,  
+  color: `rgba(0, 0, 0, 1)`,  
+  fontStyle: `normal`,  
+  fontFamily: `Inter`,  
+  fontWeight: `700`,  
+  fontSize: `18px`,  
+  letterSpacing: `0px`,  
+  textDecoration: `none`,  
+  lineHeight: `28px`,  
+  textTransform: `none`,  
+});
+  
+const DescriptionSpan2 = styled("span")({  
   whiteSpace: `pre-wrap`,  
   color: `rgba(0, 0, 0, 1)`,  
   fontStyle: `normal`,  
@@ -130,6 +158,47 @@ const Description = styled("div")({
   fontSize: `18px`,  
   letterSpacing: `0px`,  
   textDecoration: `none`,  
+  lineHeight: `28px`,  
+  textTransform: `none`,  
+});
+  
+const DescriptionSpan3 = styled("span")({  
+  whiteSpace: `pre-wrap`,  
+  color: `rgba(0, 0, 0, 1)`,  
+  fontStyle: `normal`,  
+  fontFamily: `Inter`,  
+  fontWeight: `700`,  
+  fontSize: `18px`,  
+  letterSpacing: `0px`,  
+  textDecoration: `none`,  
+  lineHeight: `28px`,  
+  textTransform: `none`,  
+});
+  
+const DescriptionSpan4 = styled("span")({  
+  whiteSpace: `pre-wrap`,  
+  color: `rgba(0, 0, 0, 1)`,  
+  fontStyle: `normal`,  
+  fontFamily: `Inter`,  
+  fontWeight: `400`,  
+  fontSize: `18px`,  
+  letterSpacing: `0px`,  
+  textDecoration: `none`,  
+  lineHeight: `28px`,  
+  textTransform: `none`,  
+});
+  
+const Description = styled("div")({  
+  textAlign: `left`,  
+  whiteSpace: `pre-wrap`,  
+  color: `rgba(0, 0, 0, 1)`,  
+  fontStyle: `normal`,  
+  fontFamily: "unset",  
+  fontWeight: `400`,  
+  fontSize: `18px`,  
+  letterSpacing: `0px`,  
+  textDecoration: `none`,  
+  lineHeight: `28px`,  
   textTransform: `none`,  
 });
   
@@ -141,11 +210,25 @@ const Features = styled("div")({
   gap: `8px`,  
   padding: `0px`,  
   boxSizing: `border-box`,  
-  height: `248px`,  
   width: `814px`,  
 });
   
 const Feature = styled("div")({  
+  textAlign: `left`,  
+  whiteSpace: `pre-wrap`,  
+  color: `rgba(0, 0, 0, 1)`,  
+  fontStyle: `normal`,  
+  fontFamily: `Inter`,  
+  fontWeight: `700`,  
+  fontSize: `16px`,  
+  letterSpacing: `0.09090909361839294px`,  
+  textDecoration: `none`,  
+  lineHeight: `26px`,  
+  textTransform: `none`,  
+  alignSelf: `stretch`,  
+});
+  
+const Feature1 = styled("div")({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: `rgba(86, 86, 86, 1)`,  
@@ -188,7 +271,7 @@ const Divider2 = styled("div")({
   height: `1px`,  
 });
   
-const Feature1 = styled("div")({  
+const Feature2 = styled("div")({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: `rgba(86, 86, 86, 1)`,  
@@ -231,7 +314,7 @@ const Divider5 = styled("div")({
   height: `1px`,  
 });
   
-const Feature2 = styled("div")({  
+const Feature3 = styled("div")({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: `rgba(86, 86, 86, 1)`,  
@@ -263,73 +346,7 @@ const Divider7 = styled("div")({
   justifyContent: `flex-start`,  
   alignItems: `center`,  
   gap: `6px`,  
-  padding: `0px`,  
-  boxSizing: `border-box`,  
   flexGrow: `1`,  
-});
-  
-const Divider8 = styled("div")({  
-  backgroundColor: `rgba(86, 86, 86, 1)`,  
-  flexGrow: `1`,  
-  height: `1px`,  
-});
-  
-const Feature3 = styled("div")({  
-  textAlign: `left`,  
-  whiteSpace: `pre-wrap`,  
-  color: `rgba(86, 86, 86, 1)`,  
-  fontStyle: `normal`,  
-  fontFamily: `Inter`,  
-  fontWeight: `400`,  
-  fontSize: `16px`,  
-  letterSpacing: `0.09090909361839294px`,  
-  textDecoration: `none`,  
-  lineHeight: `26px`,  
-  textTransform: `none`,  
-  alignSelf: `stretch`,  
-});
-  
-const Divider9 = styled("div")({  
-  display: `flex`,  
-  flexDirection: `row`,  
-  justifyContent: `center`,  
-  alignItems: `center`,  
-  padding: `6px 0px`,  
-  boxSizing: `border-box`,  
-  alignSelf: `stretch`,  
-  overflow: `hidden`,  
-});
-  
-const Divider10 = styled("div")({  
-  display: `flex`,  
-  flexDirection: `row`,  
-  justifyContent: `flex-start`,  
-  alignItems: `center`,  
-  gap: `6px`,  
-  padding: `0px`,  
-  boxSizing: `border-box`,  
-  flexGrow: `1`,  
-});
-  
-const Divider11 = styled("div")({  
-  backgroundColor: `rgba(86, 86, 86, 1)`,  
-  flexGrow: `1`,  
-  height: `1px`,  
-});
-  
-const Feature4 = styled("div")({  
-  textAlign: `left`,  
-  whiteSpace: `pre-wrap`,  
-  color: `rgba(86, 86, 86, 1)`,  
-  fontStyle: `normal`,  
-  fontFamily: `Inter`,  
-  fontWeight: `400`,  
-  fontSize: `16px`,  
-  letterSpacing: `0.09090909361839294px`,  
-  textDecoration: `none`,  
-  lineHeight: `26px`,  
-  textTransform: `none`,  
-  alignSelf: `stretch`,  
 });
   
 const Next = styled("div")({  
@@ -341,6 +358,18 @@ const Next = styled("div")({
   padding: `0px`,  
   boxSizing: `border-box`,  
 });
+  
+const Link1 = styled(Link)(({ theme }) =>({  
+  color: theme.palette["Primary"]["Main"],  
+  fontStyle: theme.typography["Typography"]["Body 3"].fontStyle,  
+  fontFamily: theme.typography["Typography"]["Body 3"].fontFamily,  
+  fontWeight: theme.typography["Typography"]["Body 3"].fontWeight,  
+  fontSize: theme.typography["Typography"]["Body 3"].fontSize,  
+  letterSpacing: theme.typography["Typography"]["Body 3"].letterSpacing,  
+  textDecoration: theme.typography["Typography"]["Body 3"].textDecoration,  
+  lineHeight: theme.typography["Typography"]["Body 3"].lineHeight,  
+  textTransform: theme.typography["Typography"]["Body 3"].textTransform,  
+}));
  
 function NavbarPage() {
   const {fns} = useNavbarPage();
@@ -354,57 +383,57 @@ function NavbarPage() {
                <WelcomeRow >
                  <AutoAddedFrame >
                    <Frame1 >
+                     <Disclaimer >
+                       {`*Designed for Desktop only`}
+                         </Disclaimer>
                      <Title >
-                       {`Sidebar Component`}
+                       {`The interactive Dashboard sample 
+is made up of 2 main components:`}
                          </Title>
                      <Description >
-                       {`This component is .....`}
-                         </Description>
+                       <DescriptionSpan1  >{`1.`}</DescriptionSpan1>
+                       <DescriptionSpan2  >{` Sidebar component
+`}</DescriptionSpan2>
+                       <DescriptionSpan3  >{`2.`}</DescriptionSpan3>
+                       <DescriptionSpan4  >{` Feedback component`}</DescriptionSpan4>
+                     </Description>
                    </Frame1>
                  </AutoAddedFrame>
                  <Features >
                    <Feature >
-                     {`Uses variants to show different states on hover`}
+                     {`This interactive Sidebar component:`}
                        </Feature>
+                   <Feature1 >
+                     {`Uses variants to show different states on hover`}
+                       </Feature1>
                    <Divider >
                      <Divider1 >
                        <Divider2 >
                        </Divider2>
                      </Divider1>
                    </Divider>
-                   <Feature1 >
-                     {`Uses nested menu item with variants to show different states on hover as well`}
-                       </Feature1>
+                   <Feature2 >
+                     {`Uses nested menu item with variants to show different states on hover and selected as well`}
+                       </Feature2>
                    <Divider3 >
                      <Divider4 >
                        <Divider5 >
                        </Divider5>
                      </Divider4>
                    </Divider3>
-                   <Feature2 >
+                   <Feature3 >
                      {`Is fully responsive to the full height of the parent`}
-                       </Feature2>
+                       </Feature3>
                    <Divider6 >
                      <Divider7 >
-                       <Divider8 >
-                       </Divider8>
                      </Divider7>
                    </Divider6>
-                   <Feature3 >
-                     {`Other thing..`}
-                       </Feature3>
-                   <Divider9 >
-                     <Divider10 >
-                       <Divider11 >
-                       </Divider11>
-                     </Divider10>
-                   </Divider9>
-                   <Feature4 >
-                     {`Other thing..`}
-                       </Feature4>
                  </Features>
                  <Next >
-                   <Button variant="contained" size="large" color="primary"  onClick={() => fns.navigate("/moonbase/feedbackbar")} endIcon={ <SvgIcon sx={{width: "18px", height: "22px"}} component = { ArrowForwardFilled1 } />}  > Feedback Component </Button>
+                   <Button variant="contained" size="large" color="primary"  onClick={() => fns.navigate("/moonbase/feedbackbar")} endIcon={ <SvgIcon sx={{width: "18px", height: "22px"}} component = { ArrowForwardFilled1 } />}  > See 2nd Component </Button>
+                   {false ?
+                       <Link1 href="#" underline="hover"  >Go to Feedback component</Link1>
+                   :null}
                  </Next>
                </WelcomeRow>
              </HeroContent>

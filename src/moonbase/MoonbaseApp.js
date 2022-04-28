@@ -13,6 +13,8 @@ import Dashboard from "./dashboard/Dashboard";
 import NavbarPage from "./dashboard/NavbarPage";
 import FeedbackBarPage from "./dashboard/FeedbackBarPage";
 import ProductsPage from "./payment/ProductsPage";
+import Q404 from "./dashboard/Q404";
+
 
 const MainDiv = styled("div")({
   width: "100vw",
@@ -33,7 +35,8 @@ function MoonbaseApp() {
             <Route path="navbar" element={<NavbarPage />} />
             <Route path="feedbackbar" element={<FeedbackBarPage />} />
             <Route path="payment" element={<ProductsPage />} />
-            <Route path="*" element={<NavbarPage />} />
+            <Route path="/" element={<NavbarPage />} />
+            <Route path="*" element={<Q404 />} />
           </Routes>
         </MainDiv>
       </StyledEngineProvider>

@@ -16,41 +16,45 @@ import HomeImage from './assets/images/Home.png';
 import SeparatorImage from './assets/images/Separator_2.png';
 import Separator1Image from './assets/images/Separator_1.png';
 import Separator2Image from './assets/images/Separator.png';
-import Frame44Image from './assets/images/Frame_44.png';
 import { styled } from '@mui/material/styles';
-
+import useBreadcrumbs from './useBreadcrumbs';
  
-const Breadcrumbs1 = styled("div")({  
+const ScreenDesktop = styled("div")({  
   display: `flex`,  
   flexDirection: `column`,  
-  width: `1423px`,  
+  width: "100vw",  
   justifyContent: `flex-start`,  
   alignItems: `flex-start`,  
-  padding: `22px 60px 0px 60px`,  
+  padding: `0px`,  
   boxSizing: `border-box`,  
 });
   
-const HeroContent = styled("div")({  
+const HeroContent = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   display: `flex`,  
   flexDirection: `row`,  
-  justifyContent: `flex-start`,  
+  justifyContent: data.size === "mobile" ? `center` : `flex-start`,  
   alignItems: `center`,  
-  gap: `117px`,  
-  padding: `0px 0px 20px 0px`,  
+  padding: data.size === "mobile" ? `0px 30px 20px 30px` : `0px 0px 20px 0px`,  
   boxSizing: `border-box`,  
-});
+  alignSelf: `stretch`,  
+  gap: data.size === "mobile" ? `117px` : "unset",  
+}));
   
-const Breadcrumb3 = styled("div")(({ theme }) =>({  
+const Breadcrumb3 = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ theme, data }) =>({  
   backgroundColor: theme.palette["Background"]["Paper"],  
   display: `flex`,  
   flexDirection: `row`,  
-  justifyContent: `flex-start`,  
+  justifyContent: data.size === "mobile" ? `space-between` : `flex-start`,  
   alignItems: `center`,  
-  gap: `24px`,  
-  padding: `0px 36px 0px 0px`,  
+  gap: data.size === "mobile" ? "unset" : `24px`,  
+  padding: `0px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
-  width: `760px`,  
+  flexGrow: `1`,  
   overflow: `hidden`,  
 }));
   
@@ -64,94 +68,103 @@ const Frame45 = styled("div")({
   boxSizing: `border-box`,  
 });
   
-const Home = styled("img")({  
-  height: `22px`,  
-  width: `22px`,  
-});
+const Home = styled("img", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
+  height: data.size === "mobile" ? `14px` : `22px`,  
+  width: data.size === "mobile" ? `14px` : `22px`,  
+}));
   
-const Separator = styled("img")({  
-  height: `12.5px`,  
-  width: `6px`,  
-});
+const Separator = styled("img", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
+  height: data.size === "mobile" ? `7.5px` : `12.5px`,  
+  width: data.size === "mobile" ? `3.6px` : `6px`,  
+}));
   
-const CompanySwag = styled("div")(({ theme }) =>({  
+const CompanySwag = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ theme, data }) =>({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: theme.palette["Text"]["Primary"],  
   fontStyle: `normal`,  
   fontFamily: `Heebo`,  
   fontWeight: `400`,  
-  fontSize: `20px`,  
+  fontSize: data.size === "mobile" ? `12px` : `20px`,  
   letterSpacing: `0px`,  
   textDecoration: `none`,  
   textTransform: `none`,  
 }));
   
-const Separator1 = styled("img")({  
-  height: `12.5px`,  
-  width: `6px`,  
-});
+const Separator1 = styled("img", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
+  height: data.size === "mobile" ? `7.5px` : `12.5px`,  
+  width: data.size === "mobile" ? `3.6px` : `6px`,  
+}));
   
-const Clothing = styled("div")(({ theme }) =>({  
+const Clothing = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ theme, data }) =>({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: theme.palette["Text"]["Primary"],  
   fontStyle: `normal`,  
   fontFamily: `Heebo`,  
   fontWeight: `400`,  
-  fontSize: `20px`,  
+  fontSize: data.size === "mobile" ? `12px` : `20px`,  
   letterSpacing: `0px`,  
   textDecoration: `none`,  
   textTransform: `none`,  
 }));
   
-const Separator2 = styled("img")({  
-  height: `12.5px`,  
-  width: `6px`,  
-});
+const Separator2 = styled("img", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
+  height: data.size === "mobile" ? `7.5px` : `12.5px`,  
+  width: data.size === "mobile" ? `3.6px` : `6px`,  
+}));
   
-const Latest = styled("div")(({ theme }) =>({  
+const Latest = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ theme, data }) =>({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: theme.palette["Text"]["Primary"],  
   fontStyle: `normal`,  
   fontFamily: `Heebo`,  
   fontWeight: `400`,  
-  fontSize: `20px`,  
+  fontSize: data.size === "mobile" ? `12px` : `20px`,  
   letterSpacing: `0px`,  
   textDecoration: `none`,  
   textTransform: `none`,  
 }));
-  
-const Frame44 = styled("img")({  
-  height: `22px`,  
-  width: `22px`,  
-});
  
 function Breadcrumbs() {
+  const {data} = useBreadcrumbs();
   return (
-    <Breadcrumbs1 >
-       <HeroContent >
-         <Breadcrumb3 >
+    <ScreenDesktop >
+       <HeroContent data={data} >
+         <Breadcrumb3 data={data} >
            <Frame45 >
-             <Home  src={HomeImage} alt={"Home"}/>
+             <Home data={data}  src={HomeImage} alt={"Home"}/>
            </Frame45>
-           <Separator  src={SeparatorImage} alt={"Separator"}/>
-           <CompanySwag >
+           <Separator data={data}  src={SeparatorImage} alt={"Separator"}/>
+           <CompanySwag data={data} >
              {`Company Swag`}
                </CompanySwag>
-           <Separator1  src={Separator1Image} alt={"Separator"}/>
-           <Clothing >
+           <Separator1 data={data}  src={Separator1Image} alt={"Separator"}/>
+           <Clothing data={data} >
              {`Clothing`}
                </Clothing>
-           <Separator2  src={Separator2Image} alt={"Separator"}/>
-           <Latest >
+           <Separator2 data={data}  src={Separator2Image} alt={"Separator"}/>
+           <Latest data={data} >
              {`Latest`}
                </Latest>
-           <Frame44  src={Frame44Image} alt={"Frame 44"}/>
          </Breadcrumb3>
        </HeroContent>
-     </Breadcrumbs1>
+     </ScreenDesktop>
    );
 }
 

@@ -11,9 +11,11 @@
 **********************************************************************/
 
 import { useState } from "react";
+import useResponsiveSize from "../../useResponsiveSize";
 import valid from "card-validator";
 
 const usePaymentCard = () => {
+  let size = useResponsiveSize();
   let [formSubmitted, setFormSubmitted] = useState(false);
 
   let [name, setName] = useState("");
@@ -38,6 +40,7 @@ const usePaymentCard = () => {
   data.expDate = expDate;
   data.expDateError = expDateError;
   data.formSubmitted = formSubmitted;
+  data.size = size;
 
   const onNameChange = (e) => {
     setName(e.target.value);
