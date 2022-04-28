@@ -5,6 +5,7 @@ This repository contains code for the Samples created using Quest Components
 ## Available Samples
 
 You can find the Dashboard sample at: src/moonbase/dashboard
+
 You can find the Payment sample at: src/moonbase/payment
 
 ## Learn More
