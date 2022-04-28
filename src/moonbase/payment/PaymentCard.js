@@ -27,12 +27,12 @@ const ScreenDesktop = styled("div", {
   borderRadius: `10px`,  
   display: `flex`,  
   flexDirection: data.size === "mobile" ? `column` : `row`,  
-  width: data.size === "mobile" ? `360px` : `728px`,  
+  width: data.size === "mobile" ? `264px` : `728px`,  
   height: data.size === "mobile" ? "unset" : `574px`,  
   justifyContent: `flex-start`,  
   alignItems: `flex-start`,  
-  gap: `40px`,  
-  padding: `40px`,  
+  gap: data.size === "mobile" ? `30px` : `40px`,  
+  padding: data.size === "mobile" ? `26px` : `40px`,  
   boxSizing: `border-box`,  
   overflow: `hidden`,  
 }));
@@ -51,7 +51,7 @@ const Image = styled("div", {
   gap: `40px`,  
   alignSelf: `stretch`,  
   width: data.size === "mobile" ? "unset" : `304px`,  
-  height: data.size === "mobile" ? `242px` : "unset",  
+  height: data.size === "mobile" ? `190px` : "unset",  
 }));
   
 const Form = styled("div", {
@@ -115,32 +115,36 @@ const Text = styled("div")({
   boxSizing: `border-box`,  
 });
   
-const ConfirmPurchase = styled("div")(({ theme }) =>({  
+const ConfirmPurchase = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ theme, data }) =>({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: `rgba(0, 0, 0, 1)`,  
-  fontStyle: theme.typography["Typography"]["H5"].fontStyle,  
-  fontFamily: theme.typography["Typography"]["H5"].fontFamily,  
-  fontWeight: theme.typography["Typography"]["H5"].fontWeight,  
-  fontSize: theme.typography["Typography"]["H5"].fontSize,  
-  letterSpacing: theme.typography["Typography"]["H5"].letterSpacing,  
-  textDecoration: theme.typography["Typography"]["H5"].textDecoration,  
-  lineHeight: theme.typography["Typography"]["H5"].lineHeight,  
-  textTransform: theme.typography["Typography"]["H5"].textTransform,  
+  fontStyle: data.size === "mobile" ? `normal` : theme.typography["Typography"]["H5"].fontStyle,  
+  fontFamily: data.size === "mobile" ? `Heebo` : theme.typography["Typography"]["H5"].fontFamily,  
+  fontWeight: data.size === "mobile" ? `400` : theme.typography["Typography"]["H5"].fontWeight,  
+  fontSize: data.size === "mobile" ? `22px` : theme.typography["Typography"]["H5"].fontSize,  
+  letterSpacing: data.size === "mobile" ? `0px` : theme.typography["Typography"]["H5"].letterSpacing,  
+  textDecoration: data.size === "mobile" ? `none` : theme.typography["Typography"]["H5"].textDecoration,  
+  lineHeight: data.size === "mobile" ? "unset" : theme.typography["Typography"]["H5"].lineHeight,  
+  textTransform: data.size === "mobile" ? `none` : theme.typography["Typography"]["H5"].textTransform,  
 }));
   
-const ItemName = styled("div")({  
+const ItemName = styled("div", {
+    shouldForwardProp: prop => !["data"].includes(prop)
+  })(({ data }) =>({  
   textAlign: `left`,  
   whiteSpace: `pre-wrap`,  
   color: `rgba(0, 0, 0, 1)`,  
   fontStyle: `normal`,  
   fontFamily: `Heebo`,  
   fontWeight: `400`,  
-  fontSize: `20px`,  
+  fontSize: data.size === "mobile" ? `18px` : `20px`,  
   letterSpacing: `0px`,  
   textDecoration: `none`,  
   textTransform: `none`,  
-});
+}));
   
 const ItemPrice = styled("div")({  
   textAlign: `left`,  
@@ -373,10 +377,10 @@ function PaymentCard(props) {
              <TextTop data={data} >
                <TopRow >
                  <Text >
-                   <ConfirmPurchase >
+                   <ConfirmPurchase data={data} >
                      {`Confirm Purchase`}
                        </ConfirmPurchase>
-                   <ItemName >
+                   <ItemName data={data} >
                      {props.product.name}
                        </ItemName>
                    <ItemPrice >

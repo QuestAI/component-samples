@@ -49,9 +49,9 @@ const Sidebar1 = styled(Sidebar)(({ theme }) =>({
 const Content = styled("div")({  
   display: `flex`,  
   flexDirection: `column`,  
-  justifyContent: `center`,  
+  justifyContent: `flex-start`,  
   alignItems: `flex-start`,  
-  padding: `0px`,  
+  padding: `60px 0px 0px 0px`,  
   boxSizing: `border-box`,  
   alignSelf: `stretch`,  
   flexGrow: `1`,  
